@@ -1,0 +1,83 @@
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    background-color: #FFB703; /* accent */
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem; /* py-3 px-6 */
+    border-radius: 0.5rem; /* rounded-lg */
+    transition: all 0.3s;
+    transform: scale(1);
+  }
+
+  .btn-primary:hover {
+    background-color: rgba(255, 183, 3, 0.9); /* hover:bg-accent/90 */
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                0 4px 6px -4px rgba(0, 0, 0, 0.1); /* hover:shadow-lg */
+  }
+
+  .btn-secondary {
+    background-color: #002B5B; /* primary */
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+    transform: scale(1);
+  }
+
+  .btn-secondary:hover {
+    background-color: rgba(0, 43, 91, 0.9); /* hover:bg-primary/90 */
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  }
+
+  .card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    transform: translateY(0);
+  }
+
+  .card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    transform: translateY(-0.25rem); /* hover:-translate-y-1 */
+  }
+
+  .section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem; /* py-16 */
+    padding-left: 1rem;
+    padding-right: 1rem; /* px-4 */
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-left: 2rem;
+      padding-right: 2rem; /* md:px-8 */
+    }
+  }
+
+  .container-max {
+    max-width: 80rem; /* max-w-7xl */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

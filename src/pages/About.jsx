@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom';
+import HeroAbout from "../components/about/HeroAbout"
+import AboutPropDoonSection from '../components/about/AboutPropDoonSection';
+import WhyChooseUsSection from '../components/about/WhyChooseUsSection';
 
 const About = () => {
   const team = [
@@ -48,23 +51,11 @@ const About = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div>
       {/* Hero Section */}
-      <section className="relative h-96 flex items-center justify-center">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/60"></div>
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600')`
-          }}
-        ></div>
-        <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
-          <p className="text-xl max-w-2xl mx-auto">
-            Building excellence through innovation, integrity, and dedication
-          </p>
-        </div>
-      </section>
+      <HeroAbout />
+      <AboutPropDoonSection />
+      <WhyChooseUsSection />
 
       {/* Vision & Mission */}
       <section id="vision" className="section-padding bg-white">

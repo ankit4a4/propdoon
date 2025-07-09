@@ -1,84 +1,173 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import img1 from "../../assets/home/image1.jpg"
-import img2 from "../../assets/home/image2.jpeg"
-import img3 from "../../assets/home/image3.webp"
-import img4 from "../../assets/home/image4.jpg"
+import { motion } from 'framer-motion';
+import img1 from "../../assets/home/image1.jpg";
+import img2 from "../../assets/home/image2.jpeg";
+import img3 from "../../assets/home/image3.webp";
+import img4 from "../../assets/home/image4.jpg";
+
 const HomeProperty = () => {
     const categories = [
         {
             title: 'Residential Properties',
-            description:
-                'Uttarakhand has witnessed steady growth in real estate value over the years. With its scenic beauty, pleasant climate, and increasing urbanization, residential properties in Uttarakhand have the potential for long-term appreciation, making it an attractive investment destination.',
+            description: 'Uttarakhand has witnessed steady growth in real estate value over the years. With its scenic beauty, pleasant climate, and increasing urbanization, residential properties in Uttarakhand have the potential for long-term appreciation.',
             link: '/residential-properties',
-            image:
-                img1,
+            image: img1,
+            stats: '12% Annual Growth'
         },
         {
             title: 'Commercial Properties',
-            description:
-                'Uttarakhand, surrounded by the Himalayan foothills, offers a serene and picturesque environment. Farmhouses or villas in this region provide a tranquil escape from urban life, creating an idyllic setting for relaxation and rejuvenation.',
+            description: 'Uttarakhand offers excellent commercial opportunities with growing tourism and infrastructure. Our commercial properties provide high visibility and strategic locations for businesses.',
             link: '/commercial-properties',
-            image:
-                img2,
+            image: img2,
+            stats: '8.5% Rental Yield'
         },
         {
             title: 'Villa & Farmhouses',
-            description:
-                'Farmhouses and villas in Uttarakhand often come with extensive land, allowing you to be close to nature. The lush greenery, clean air, and scenic landscapes contribute to a healthy and peaceful lifestyle.',
+            description: 'Experience luxury living amidst nature with our premium villas and farmhouses. These properties offer privacy, tranquility, and breathtaking views of Uttarakhand\'s landscapes.',
             link: '/villas-farmhouses',
-            image:
-                img3,
+            image: img3,
+            stats: 'Luxury Living'
         },
         {
             title: 'ROI Properties',
-            description:
-                'Investing in properties in Uttarakhand through Propdoon, a reputable real estate consultancy service, can offer a compelling proposition with the potential for high return on investment (ROI).',
+            description: 'Our carefully selected high-ROI properties offer investors exceptional returns. With our market expertise, we identify properties with the highest appreciation potential.',
             link: '/roi-properties',
-            image:
-                img4,
+            image: img4,
+            stats: '15-20% ROI'
         },
     ];
 
-    return (
-        <section className="bg-[#E5EDF5] py-16 px-4">
-            <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#1C1C1C] mb-4">
-                        Our Property Categories
-                    </h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Explore our curated range of investment opportunities in Uttarakhand
-                    </p>
-                </div>
+    const fadeIn = {
+        hidden: { opacity: 0, y: 50 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8,
+                ease: "easeOut"
+            }
+        }
+    };
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    const staggerContainer = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+                delayChildren: 0.3
+            }
+        }
+    };
+
+    return (
+        <section className="relative py-6  md:py-16 px-4 bg-gradient-to-b from-[#f8fafc] to-[#E5EDF5] overflow-hidden">
+            {/* Decorative elements */}
+            <div className="absolute inset-0 overflow-hidden opacity-15">
+                <div className="absolute top-10 left-10 w-64 h-64 bg-[#FFB703] rounded-full filter blur-[100px] mix-blend-multiply"></div>
+                <div className="absolute bottom-10 right-10 w-64 h-64 bg-indigo-500 rounded-full filter blur-[100px] mix-blend-multiply"></div>
+            </div>
+
+            <div className="max-w-7xl mx-auto relative z-10">
+                {/* Enhanced Header Section */}
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={staggerContainer}
+                    className="text-center mb-20"
+                >
+                    <motion.div variants={fadeIn} className="mb-6">
+                        <span className="inline-block px-4 py-1.5 bg-[#FFB703]/10 text-[#FFB703] font-medium rounded-full text-sm tracking-wide border border-[#FFB703]/20">
+                            PROPERTY PORTFOLIO
+                        </span>
+                    </motion.div>
+                    <motion.h2 variants={fadeIn} className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                        Discover Uttarakhand's <br className="hidden md:block" /> <span className="text-[#FFB703] relative inline-block">
+                            Finest Properties
+                            <svg className="absolute -bottom-3 left-0 w-full h-3 text-[#FFB703]" viewBox="0 0 200 20">
+                                <path d="M0,10 Q100,25 200,10" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+                            </svg>
+                        </span>
+                    </motion.h2>
+                    <motion.p variants={fadeIn} className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                        Curated selection of premium properties offering exceptional lifestyle and investment opportunities in the heart of Himalayas
+                    </motion.p>
+                </motion.div>
+
+                <motion.div
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={staggerContainer}
+                >
                     {categories.map((item, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            className="bg-white rounded-lg overflow-hidden shadow-md hover:-translate-y-1 transition-transform duration-300"
+                            variants={fadeIn}
+                            whileHover={{ y: -10 }}
+                            transition={{ type: "spring", stiffness: 300 }}
                         >
-                            <img
-                                src={item.image}
-                                alt={item.title}
-                                className="w-full h-52 object-cover"
-                            />
-                            <div className="p-6">
-                                <h3 className="text-2xl font-semibold text-[#002B5B] mb-3">
-                                    {item.title}
-                                </h3>
-                                <p className="text-gray-700 mb-5">{item.description}</p>
-                                <Link
-                                    // to={item.link}
-                                    to={"/#"}
-                                    className="inline-block bg-[#FFB703] text-white font-medium px-5 py-2 rounded-md hover:shadow-lg transition-all duration-300"
-                                >
-                                    Read More
-                                </Link>
-                            </div>
-                        </div>
+                            <Link
+                                to={item.link}
+                                className="group relative block h-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500"
+                            >
+                                {/* Image with overlay */}
+                                <div className="relative h-80 overflow-hidden">
+                                    <img
+                                        src={item.image}
+                                        alt={item.title}
+                                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
+                                    <div className="absolute top-4 right-4 bg-[#FFB703] text-white font-bold px-4 py-1 rounded-full text-sm shadow-md">
+                                        {item.stats}
+                                    </div>
+                                </div>
+
+                                {/* Content */}
+                                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                                    <div className="relative z-10">
+                                        <h3 className="text-2xl md:text-3xl font-bold mb-3 group-hover:text-[#FFB703] transition-colors duration-300">
+                                            {item.title}
+                                        </h3>
+                                        <p className="text-gray-200 mb-6 line-clamp-2">
+                                            {item.description}
+                                        </p>
+                                        <span className="inline-flex items-center text-white group-hover:text-[#FFB703] font-medium">
+                                            Explore Properties
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-2" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                </div>
+                            </Link>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
+
+                <motion.div
+                    variants={fadeIn}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="text-center mt-20"
+                >
+                    <Link
+                        to="/properties"
+                        className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#FFB703] to-[#FFA000] hover:from-[#FFA000] hover:to-[#FF8F00] text-white font-semibold rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl text-lg relative overflow-hidden group"
+                    >
+                        <span className="relative z-10">Browse All Properties</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 relative z-10 transition-transform group-hover:translate-x-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                        <span className="absolute inset-0 bg-gradient-to-r from-[#FFA000] to-[#FF8F00] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                    </Link>
+                </motion.div>
             </div>
         </section>
     );

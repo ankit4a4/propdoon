@@ -27,7 +27,7 @@ const HeroHome = () => {
     }, []);
 
     return (
-        <section className="relative md:h-screen pb-8 md:pb-0 flex items-center justify-center overflow-hidden">
+        <section className="relative md:h-screen pb-8 md:pb-0   pt-8 md:pt-0 flex items-center justify-center overflow-hidden">
             {/* Background Image */}
             <div
                 className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ${fade ? 'opacity-100' : 'opacity-0'}`}

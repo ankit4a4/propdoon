@@ -5,7 +5,7 @@ const HomeCTA = () => {
     return (
         <section
             style={{
-                backgroundColor: '#D56F21',
+                backgroundColor: '#002B5B',
                 color: '#FFFFFF',
                 paddingTop: '4rem',
                 paddingBottom: '4rem',
@@ -17,36 +17,37 @@ const HomeCTA = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
                     Ready to Build Your Dream?
                 </h2>
-                <p className="text-lg mb-8 max-w-2xl mx-auto">
+                <p className="text-lg mb-8 max-w-2xl mx-auto text-gray-200">
                     Let's discuss your project and bring your vision to life with our expertise and dedication
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    {/* Primary CTA */}
                     <Link
-                        // to="/contact"
-                        to={"/#"}
+                        to="/#"
                         className="text-lg font-semibold px-8 py-4 rounded-lg transition-all"
                         style={{
-                            backgroundColor: '#002B5B',
+                            backgroundColor: '#64C0ED',
                             color: '#FFFFFF',
                             transition: 'all 0.3s ease',
                         }}
                         onMouseEnter={(e) => {
-                            e.currentTarget.style.backgroundColor = 'rgba(0,43,91,0.9)';
+                            e.currentTarget.style.backgroundColor = '#56AFDA';
                         }}
                         onMouseLeave={(e) => {
-                            e.currentTarget.style.backgroundColor = '#002B5B';
+                            e.currentTarget.style.backgroundColor = '#64C0ED';
                         }}
                     >
                         Get Free Consultation
                     </Link>
+
+                    {/* Secondary CTA */}
                     <Link
-                        // to="/properties"
-                        to={"/#"}
-                        className="text-lg font-semibold px-8 py-4 rounded-lg transition-colors"
+                        to="/#"
+                        className="text-lg font-semibold px-8 py-4 rounded-lg transition-all"
                         style={{
                             backgroundColor: '#FFFFFF',
-                            color: '#FFB703',
-                            transition: 'background-color 0.3s ease',
+                            color: '#E62F35',
+                            transition: 'all 0.3s ease',
                         }}
                         onMouseEnter={(e) => {
                             e.currentTarget.style.backgroundColor = '#F3F4F6';

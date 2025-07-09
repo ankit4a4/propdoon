@@ -27,7 +27,7 @@ const HeroHome = () => {
     }, []);
 
     return (
-        <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <section className="relative md:h-screen pb-8 md:pb-0 flex items-center justify-center overflow-hidden">
             {/* Background Image */}
             <div
                 className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ${fade ? 'opacity-100' : 'opacity-0'}`}
@@ -118,7 +118,7 @@ const HeroHome = () => {
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+            <div className="absolute hidden md:block bottom-8 left-1/2 transform -translate-x-1/2 z-20">
                 <div className="animate-bounce flex flex-col items-center">
                     <span className="text-xs text-white/80 mb-1">Scroll Down</span>
                     <BsChevronDoubleDown className="h-6 w-6 text-white opacity-80" />

@@ -10,7 +10,7 @@ import {
   HiOutlinePhone,
   HiOutlineMail,
 } from 'react-icons/hi';
-import logo from "../assets/logo1.webp"
+import logo from "../assets/logo1.webp";
 
 const Footer = () => {
   const quickLinks = [
@@ -30,7 +30,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer style={{ backgroundColor: '#000', color: 'white' }}>
+    <footer style={{ backgroundColor: '#000', color: '#FFFFFF' }}>
       <div
         style={{
           maxWidth: '80rem',
@@ -43,7 +43,6 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center space-x-3 mb-6">
               <img src={logo} alt="Logo" className="w-40 object-contain" />
-
             </Link>
             <p className="mb-6 max-w-md" style={{ color: '#D1D5DB' }}>
               Building dreams with excellence. We are your trusted partner for
@@ -60,11 +59,10 @@ const Footer = () => {
                     backgroundColor: 'rgba(255,255,255,0.1)',
                   }}
                   onMouseOver={(e) =>
-                    (e.currentTarget.style.backgroundColor = '#FFB703')
+                    (e.currentTarget.style.backgroundColor = '#64C0ED')
                   }
                   onMouseOut={(e) =>
-                  (e.currentTarget.style.backgroundColor =
-                    'rgba(255,255,255,0.1)')
+                    (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)')
                   }
                   aria-label={social.name}
                 >
@@ -81,11 +79,10 @@ const Footer = () => {
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
-                    // to={link.href}
                     to={"/#"}
                     className="transition-colors"
                     style={{ color: '#D1D5DB' }}
-                    onMouseOver={(e) => (e.target.style.color = '#FFB703')}
+                    onMouseOver={(e) => (e.target.style.color = '#64C0ED')}
                     onMouseOut={(e) => (e.target.style.color = '#D1D5DB')}
                   >
                     {link.name}
@@ -102,7 +99,7 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <HiOutlineLocationMarker
                   className="w-5 h-5 mt-1"
-                  style={{ color: '#FFB703' }}
+                  style={{ color: '#64C0ED' }}
                 />
                 <div>
                   <p style={{ color: '#D1D5DB' }}>123 Builder Street</p>
@@ -114,14 +111,14 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <HiOutlinePhone
                   className="w-5 h-5"
-                  style={{ color: '#FFB703' }}
+                  style={{ color: '#64C0ED' }}
                 />
                 <p style={{ color: '#D1D5DB' }}>+91 7900309090</p>
               </div>
               <div className="flex items-center space-x-3">
                 <HiOutlineMail
                   className="w-5 h-5"
-                  style={{ color: '#FFB703' }}
+                  style={{ color: '#64C0ED' }}
                 />
                 <p style={{ color: '#D1D5DB' }}>info@propdoon.com</p>
               </div>
@@ -138,7 +135,8 @@ const Footer = () => {
           }}
         >
           <p style={{ color: '#D1D5DB' }}>
-            © {new Date().getFullYear()} PropDoon. All rights reserved. Powered by <span className='text-[#D83030]'>Rank</span>mantra
+            © {new Date().getFullYear()} PropDoon. All rights reserved. Powered by{' '}
+            <span style={{ color: '#E62F35' }}>Rank</span>mantra
           </p>
         </div>
       </div>

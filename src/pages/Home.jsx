@@ -9,7 +9,7 @@ import AboutSection from '../components/home/AboutSection';
 
 const Home = () => {
   return (
-    < >
+    <div className='pt-20' >
       <HeroHome />
       <AboutSection />
       <HomeService />
@@ -18,7 +18,7 @@ const Home = () => {
       <Testimonials />
       <HomeBlog />
       <HomeCTA />
-    </>
+    </div>
   );
 };
 

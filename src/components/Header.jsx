@@ -1,22 +1,23 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import logo1 from "../assets/logo1.webp"
-import logo2 from "../assets/logo2.webp"
+import logo2 from "../assets/logo2.webp";
+import { FiMenu, FiX } from 'react-icons/fi';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'auto';
+  }, [isMobileMenuOpen]);
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -61,9 +62,9 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
-            <img className='w-30' src={isScrolled ? logo2 : logo1} alt="" />
-          </Link>
+          <div className="flex items-center space-x-3">
+            <img className="h-10" src={logo2} alt="Logo" />
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
@@ -74,23 +75,13 @@ const Header = () => {
                 onMouseEnter={() => item.dropdown && setActiveDropdown(index)}
                 onMouseLeave={() => item.dropdown && setActiveDropdown(null)}
               >
-                <div className="flex items-center">
-                  <Link
-                    // to={item.href}
-                    to={"/#"}
-                    className={`font-medium transition-colors ${location.pathname.startsWith(item.href)
-                      ? 'text-yellow-500'
-                      : isScrolled
-                        ? 'text-gray-800 hover:text-blue-600'
-                        : 'text-white hover:text-yellow-300'
-                      }`}
-                  >
+                <div className="flex items-center cursor-default">
+                  <span className={`font-medium transition-colors text-black`}>
                     {item.name}
-                  </Link>
-
+                  </span>
                   {item.dropdown && (
                     <span className="ml-1">
-                      <svg className={`w-4 h-4 ${isScrolled ? 'text-gray-800' : 'text-white'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
                     </span>
@@ -102,15 +93,12 @@ const Header = () => {
                     className={`absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 py-2 transition-all duration-200 ${activeDropdown === index ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-1'}`}
                   >
                     {item.dropdown.map((subItem) => (
-                      <Link
+                      <span
                         key={subItem.name}
-                        // to={subItem.href}
-                        to={"/#"}
-                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 hover:text-blue-600 transition-colors"
-                        onClick={() => setActiveDropdown(null)}
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 cursor-default"
                       >
                         {subItem.name}
-                      </Link>
+                      </span>
                     ))}
                   </div>
                 )}
@@ -123,79 +111,75 @@ const Header = () => {
             className="lg:hidden p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-              />
-            </svg>
+            {isMobileMenuOpen ? (
+              <FiX className="w-6 h-6 text-black" />
+            ) : (
+              <FiMenu className="w-6 h-6 text-black" />
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Overlay for mobile */}
+      {isMobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        ></div>
+      )}
+
+      {/* Sidebar Menu */}
+      <div
+        className={`fixed top-0 left-0 h-[100vh] w-72 bg-white z-50 transform transition-transform duration-300 ease-in-out lg:hidden
+        ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
+      >
+        <div className="p-4 border-b flex items-center justify-between">
+          <img src={logo2} alt="Logo" className="h-10" />
+          <button onClick={() => setIsMobileMenuOpen(false)}>
+            <FiX className="w-6 h-6 text-gray-700" />
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className={`lg:hidden border-t border-gray-100 py-4 animate-slide-up ${isScrolled ? 'bg-white/90 backdrop-blur-sm shadow-md' : 'bg-black'
-            }`}>
-            {navigation.map((item, index) => (
-              <div key={item.name} className="border-b border-gray-50 last:border-b-0">
-                {item.dropdown ? (
-                  <div>
-                    <div
-                      className="flex items-center justify-between px-4 py-3 cursor-pointer"
-                      onClick={() => handleDropdownToggle(index)}
-                    >
-                      <Link
-                        // to={item.href}
-                        to={"/#"}
-                        className={`font-medium ${isScrolled ? 'text-gray-800' : 'text-white'}`}
-                        onClick={(e) => {
-                          if (activeDropdown === index) {
-                            e.preventDefault();
-                          } else {
-                            setIsMobileMenuOpen(false);
-                          }
-                        }}
-                      >
-                        {item.name}
-                      </Link>
-                      <svg
-                        className={`w-4 h-4 transition-transform ${activeDropdown === index ? 'rotate-180' : ''} ${isScrolled ? 'text-gray-800' : 'text-white'}`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </div>
-                    {activeDropdown === index && (
-                      <div className="bg-gray-50 pl-6">
-                        {item.dropdown.map((subItem) => (
-                          <Link
-                            key={subItem.name}
-                            // to={subItem.href}
-                            to={"/#"}
-                            className={`block px-4 py-3 text-sm ${isScrolled ? 'text-gray-800 hover:text-blue-600' : 'text-white hover:text-yellow-300'} border-l-2 border-gray-200`}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            {subItem.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    // to={item.href}
-                    to={"/#"}
-                    className={`block px-4 py-3 font-medium ${isScrolled ? 'text-gray-800 hover:text-blue-600' : 'text-white hover:text-yellow-300'}`}
-                    onClick={() => setIsMobileMenuOpen(false)}
+        <nav className="flex flex-col px-4 py-4 space-y-2">
+          {navigation.map((item, index) => (
+            <div key={item.name}>
+              {item.dropdown ? (
+                <div>
+                  <button
+                    className="w-full text-left font-semibold text-gray-800 flex justify-between items-center"
+                    onClick={() => handleDropdownToggle(index)}
                   >
                     {item.name}
-                  </Link>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
+                    <svg
+                      className={`w-4 h-4 transform transition-transform ${activeDropdown === index ? 'rotate-180' : ''}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {activeDropdown === index && (
+                    <div className="pl-4 mt-2 space-y-1">
+                      {item.dropdown.map((subItem) => (
+                        <span
+                          key={subItem.name}
+                          className="block text-sm text-gray-600 hover:text-black cursor-default"
+                        >
+                          {subItem.name}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <span className="block font-semibold text-gray-800">
+                  {item.name}
+                </span>
+              )}
+            </div>
+          ))}
+        </nav>
       </div>
     </header>
   );

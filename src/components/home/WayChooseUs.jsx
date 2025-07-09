@@ -1,211 +1,165 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import {
+    FaCheckCircle,
+    FaClock,
+    FaUsers,
+    FaChartLine,
+    FaHandshake,
+    FaLightbulb
+} from 'react-icons/fa';
+import bg from "../../assets/home/bg2.webp";
 
 const WayChooseUs = () => {
+    const features = [
+        {
+            icon: <FaCheckCircle className="w-8 h-8" />,
+            title: "Quality Assurance",
+            description: "Rigorous quality checks at every stage ensure flawless execution and lasting results for your property investments.",
+            stat: "99.7% Satisfaction"
+        },
+        {
+            icon: <FaClock className="w-8 h-8" />,
+            title: "On-Time Delivery",
+            description: "Precision scheduling and proactive management guarantee your projects are completed as promised, every time.",
+            stat: "On Schedule 98%"
+        },
+        {
+            icon: <FaUsers className="w-8 h-8" />,
+            title: "Expert Team",
+            description: "Certified professionals with 15+ years average experience handling Uttarakhand's unique property challenges.",
+            stat: "50+ Experts"
+        },
+        {
+            icon: <FaChartLine className="w-8 h-8" />,
+            title: "Market Insight",
+            description: "Data-driven strategies leveraging our proprietary Uttarakhand real estate intelligence platform.",
+            stat: "12% Better ROI"
+        },
+        {
+            icon: <FaHandshake className="w-8 h-8" />,
+            title: "Trusted Partners",
+            description: "Exclusive partnerships with top builders, architects, and financial institutions across the region.",
+            stat: "200+ Partners"
+        },
+        {
+            icon: <FaLightbulb className="w-8 h-8" />,
+            title: "Innovative Solutions",
+            description: "Cutting-edge technology and creative approaches tailored to Himalayan property development.",
+            stat: "15 Patents"
+        }
+    ];
+
+    const fadeIn = {
+        hidden: { opacity: 0, y: 50 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6, ease: "easeOut" }
+        }
+    };
+
+    const staggerContainer = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.3
+            }
+        }
+    };
+
     return (
         <section
-            style={{
-                backgroundColor: '#F9FAFB',
-                padding: '6rem 1rem',
-                position: 'relative',
-            }}
+            style={{ backgroundImage: `url(${bg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+            className="relative py-6 md:py-16 px-4 overflow-hidden"
         >
+            {/* Black overlay on background */}
+            <div className="absolute inset-0 bg-black opacity-80 z-0"></div>
+
             {/* Decorative elements */}
-            <div
-                style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '8px',
-                    background: 'linear-gradient(90deg, #FFB703 0%, #FB8500 100%)',
-                }}
-            />
+            <div className="absolute inset-0 overflow-hidden opacity-10 z-0">
+                <div className="absolute top-0 left-0 w-64 h-64 bg-[#FFB703] rounded-full filter blur-[100px]"></div>
+                <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo-500 rounded-full filter blur-[100px]"></div>
+            </div>
 
-            <div style={{
-                maxWidth: '80rem',
-                margin: '0 auto',
-                position: 'relative',
-            }}>
-                <div className="text-center mb-16">
-                    <span
-                        style={{
-                            display: 'inline-block',
-                            color: '#FB8500',
-                            fontWeight: '600',
-                            letterSpacing: '0.05em',
-                            marginBottom: '1rem',
-                            textTransform: 'uppercase',
-                            fontSize: '0.875rem'
-                        }}
-                    >
-                        Why Choose Us
-                    </span>
-                    <h2
-                        className="text-4xl md:text-5xl font-bold mb-4"
-                        style={{
-                            color: '#1A202C',
-                            lineHeight: '1.2',
-                        }}
-                    >
-                        Why Choose <span style={{ color: '#FB8500' }}>PropDoon</span>?
-                    </h2>
-                    <p
-                        className="text-lg max-w-2xl mx-auto"
-                        style={{
-                            color: '#4A5568',
-                            fontSize: '1.125rem',
-                            lineHeight: '1.6',
-                        }}
-                    >
-                        We combine experience, expertise, and innovation to deliver exceptional results that exceed expectations
-                    </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {/* Card 1 */}
-                    <div
-                        className="text-center p-8 rounded-xl transition-all duration-300 hover:shadow-xl"
-                        style={{
-                            backgroundColor: '#FFFFFF',
-                            border: '1px solid #E2E8F0',
-                            transform: 'translateY(0)',
-                        }}
-                        onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-                        onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-                    >
-                        <div
-                            className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
-                            style={{
-                                backgroundColor: '#FFF4E5',
-                                border: '2px solid #FFB703'
-                            }}
-                        >
-                            <svg
-                                className="w-10 h-10"
-                                style={{ color: '#FB8500' }}
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
+            <div className="max-w-7xl mx-auto relative z-10">
+                {/* Header Section */}
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={staggerContainer}
+                    className="text-center mb-20"
+                >
+                    <motion.div variants={fadeIn} className="mb-6">
+                        <span className="inline-block px-4 py-2 bg-[#FFB703]/10 text-[#FFB703] font-medium rounded-full text-sm tracking-wider border border-[#FFB703]/20">
+                            OUR DIFFERENCE
+                        </span>
+                    </motion.div>
+                    <motion.h2 variants={fadeIn} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                        Why <span className="relative">
+                            <span className="text-[#FFB703]">Choose PropDoon</span>
+                            <svg className="absolute -bottom-3 left-0 w-full h-3 text-[#FFB703]" viewBox="0 0 200 20">
+                                <path d="M0,10 Q100,25 200,10" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
                             </svg>
-                        </div>
-                        <h3
-                            className="text-2xl font-bold mb-4"
-                            style={{ color: '#1A202C' }}
-                        >
-                            Quality Assurance
-                        </h3>
-                        <p style={{
-                            color: '#4A5568',
-                            fontSize: '1rem',
-                            lineHeight: '1.7',
-                        }}>
-                            We maintain the highest standards of quality in every project with rigorous testing protocols and attention to detail.
-                        </p>
-                    </div>
+                        </span>
+                    </motion.h2>
+                    <motion.p variants={fadeIn} className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+                        We redefine real estate excellence through unmatched expertise, innovative solutions, and
+                        client-focused service in the Uttarakhand property market
+                    </motion.p>
+                </motion.div>
 
-                    {/* Card 2 */}
-                    <div
-                        className="text-center p-8 rounded-xl transition-all duration-300 hover:shadow-xl"
-                        style={{
-                            backgroundColor: '#FFFFFF',
-                            border: '1px solid #E2E8F0',
-                            transform: 'translateY(0)',
-                        }}
-                        onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-                        onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-                    >
-                        <div
-                            className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
-                            style={{
-                                backgroundColor: '#FFF4E5',
-                                border: '2px solid #FFB703'
-                            }}
+                {/* Features Grid */}
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={staggerContainer}
+                >
+                    {features.map((feature, index) => (
+                        <motion.div
+                            key={index}
+                            variants={fadeIn}
+                            whileHover={{ y: -10 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                            className="group relative"
                         >
-                            <svg
-                                className="w-10 h-10"
-                                style={{ color: '#FB8500' }}
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                                />
-                            </svg>
-                        </div>
-                        <h3
-                            className="text-2xl font-bold mb-4"
-                            style={{ color: '#1A202C' }}
-                        >
-                            On-Time Delivery
-                        </h3>
-                        <p style={{
-                            color: '#4A5568',
-                            fontSize: '1rem',
-                            lineHeight: '1.7',
-                        }}>
-                            We respect your time with strict deadlines and efficient project management to ensure timely completion.
-                        </p>
-                    </div>
+                            <div className="h-full p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden">
+                                {/* Feature icon */}
+                                <div className="relative z-10 mb-6 w-16 h-16 rounded-2xl bg-[#FFF3D8] text-[#FFB703] flex items-center justify-center group-hover:bg-[#FFB703] group-hover:text-white transition-all duration-300">
+                                    <motion.div
+                                        whileHover={{ scale: 1.1, rotate: 5 }}
+                                        className="transition-transform duration-300"
+                                    >
+                                        {feature.icon}
+                                    </motion.div>
+                                </div>
 
-                    {/* Card 3 */}
-                    <div
-                        className="text-center p-8 rounded-xl transition-all duration-300 hover:shadow-xl"
-                        style={{
-                            backgroundColor: '#FFFFFF',
-                            border: '1px solid #E2E8F0',
-                            transform: 'translateY(0)',
-                        }}
-                        onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-                        onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-                    >
-                        <div
-                            className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
-                            style={{
-                                backgroundColor: '#FFF4E5',
-                                border: '2px solid #FFB703'
-                            }}
-                        >
-                            <svg
-                                className="w-10 h-10"
-                                style={{ color: '#FB8500' }}
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                                />
-                            </svg>
-                        </div>
-                        <h3
-                            className="text-2xl font-bold mb-4"
-                            style={{ color: '#1A202C' }}
-                        >
-                            Expert Team
-                        </h3>
-                        <p style={{
-                            color: '#4A5568',
-                            fontSize: '1rem',
-                            lineHeight: '1.7',
-                        }}>
-                            Our certified professionals bring decades of combined experience and specialized knowledge to your project.
-                        </p>
-                    </div>
-                </div>
+                                {/* Feature content */}
+                                <div className="relative z-10">
+                                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-[#FFB703] transition-colors duration-300">
+                                        {feature.title}
+                                    </h3>
+                                    <p className="text-gray-600 mb-4">
+                                        {feature.description}
+                                    </p>
+                                    <span className="inline-block px-3 py-1 bg-[#FFB703]/10 text-[#FFB703] text-sm font-medium rounded-full">
+                                        {feature.stat}
+                                    </span>
+                                </div>
+
+                                {/* Hover effect */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#FFB703]/5 to-[#FFB703]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </motion.div>
+
+              
             </div>
         </section>
     );

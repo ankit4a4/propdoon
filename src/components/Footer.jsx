@@ -116,14 +116,14 @@ const Footer = () => {
                   className="w-5 h-5"
                   style={{ color: '#FFB703' }}
                 />
-                <p style={{ color: '#D1D5DB' }}>+91 98765 43210</p>
+                <p style={{ color: '#D1D5DB' }}>+91 7900309090</p>
               </div>
               <div className="flex items-center space-x-3">
                 <HiOutlineMail
                   className="w-5 h-5"
                   style={{ color: '#FFB703' }}
                 />
-                <p style={{ color: '#D1D5DB' }}>info@PropDoon.com</p>
+                <p style={{ color: '#D1D5DB' }}>info@propdoon.com</p>
               </div>
             </div>
           </div>

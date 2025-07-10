@@ -16,10 +16,10 @@ const Footer = () => {
   const quickLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Properties', href: '/properties' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Services', href: '/#' },
+    { name: 'Properties', href: '/#' },
+    { name: 'Blog', href: '/#' },
+    { name: 'Contact', href: '/#' },
   ];
 
   const socialIcons = [
@@ -79,7 +79,7 @@ const Footer = () => {
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
-                    to={"/#"}
+                    to={link.href}
                     className="transition-colors"
                     style={{ color: '#D1D5DB' }}
                     onMouseOver={(e) => (e.target.style.color = '#64C0ED')}

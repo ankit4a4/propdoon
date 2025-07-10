@@ -4,7 +4,7 @@ import img from "../../assets/about/hero.webp"
 const HeroAbout = () => {
     return (
         <>
-            <section className="relative h-96 flex items-center justify-center overflow-hidden">
+            <section className=" mt-20 relative h-96 flex items-center justify-center overflow-hidden">
                 {/* Background image */}
                 <div
                     className="absolute inset-0 bg-cover bg-center z-0"

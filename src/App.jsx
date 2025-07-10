@@ -7,6 +7,9 @@ import Services from './pages/Services';
 import Properties from './pages/Properties';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 // About submenu pages
 import Vision from './pages/about/Vision';

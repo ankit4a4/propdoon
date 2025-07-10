@@ -56,9 +56,6 @@ const Header = () => {
     { name: 'Blog', href: '/#' },
     { name: 'Contact', href: '/#' }
   ];
-
-  
-
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-sm shadow-md' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4">
@@ -84,9 +81,8 @@ const Header = () => {
                 >
                   <Link
                     to={item.href}
-                    className={`flex items-center font-medium transition-colors ${
-                      isActive ? 'text-[#DF8534]' : 'text-black'
-                    }`}
+                    className={`flex items-center font-medium transition-colors ${isActive ? 'text-[#DF8534]' : 'text-black'
+                      }`}
                   >
                     {item.name}
                     {item.dropdown && (
@@ -100,9 +96,8 @@ const Header = () => {
 
                   {item.dropdown && (
                     <div
-                      className={`absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 py-2 transition-all duration-200 ${
-                        activeDropdown === index ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-1'
-                      }`}
+                      className={`absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 py-2 transition-all duration-200 ${activeDropdown === index ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-1'
+                        }`}
                     >
                       {item.dropdown.map((subItem) => (
                         <Link
@@ -144,9 +139,8 @@ const Header = () => {
 
       {/* Mobile Sidebar Menu */}
       <div
-        className={`fixed top-0 left-0 h-[100vh] w-72 bg-white z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${
-          isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
+        className={`fixed top-0 left-0 h-[100vh] w-72 bg-white z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
       >
         <div className="p-4 border-b flex items-center justify-between">
           <img src={logo2} alt="Logo" className="h-10" />
@@ -165,9 +159,8 @@ const Header = () => {
               <div key={item.name}>
                 <Link
                   to={item.href}
-                  className={`block font-semibold ${
-                    isActive ? 'text-[#DF8534]' : 'text-gray-800'
-                  }`}
+                  className={`block font-semibold ${isActive ? 'text-[#DF8534]' : 'text-gray-800'
+                    }`}
                 >
                   {item.name}
                 </Link>

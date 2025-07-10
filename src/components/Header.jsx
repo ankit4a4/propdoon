@@ -57,9 +57,7 @@ const Header = () => {
     { name: 'Contact', href: '/#' }
   ];
 
-  const handleDropdownToggle = (index) => {
-    setActiveDropdown(activeDropdown === index ? null : index);
-  };
+  
 
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-sm shadow-md' : 'bg-transparent'}`}>
@@ -86,8 +84,9 @@ const Header = () => {
                 >
                   <Link
                     to={item.href}
-                    className={`flex items-center font-medium transition-colors ${isActive ? 'text-[#DF8534]' : 'text-black'
-                      }`}
+                    className={`flex items-center font-medium transition-colors ${
+                      isActive ? 'text-[#DF8534]' : 'text-black'
+                    }`}
                   >
                     {item.name}
                     {item.dropdown && (
@@ -101,8 +100,9 @@ const Header = () => {
 
                   {item.dropdown && (
                     <div
-                      className={`absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 py-2 transition-all duration-200 ${activeDropdown === index ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-1'
-                        }`}
+                      className={`absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 py-2 transition-all duration-200 ${
+                        activeDropdown === index ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-1'
+                      }`}
                     >
                       {item.dropdown.map((subItem) => (
                         <Link
@@ -142,10 +142,11 @@ const Header = () => {
         ></div>
       )}
 
-      {/* Sidebar Menu */}
+      {/* Mobile Sidebar Menu */}
       <div
-        className={`fixed top-0 left-0 h-[100vh] w-72 bg-white z-50 transform transition-transform duration-300 ease-in-out lg:hidden
-        ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`fixed top-0 left-0 h-[100vh] w-72 bg-white z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${
+          isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
       >
         <div className="p-4 border-b flex items-center justify-between">
           <img src={logo2} alt="Logo" className="h-10" />
@@ -155,53 +156,34 @@ const Header = () => {
         </div>
 
         <nav className="flex flex-col px-4 py-4 space-y-2">
-          {navigation.map((item, index) => {
+          {navigation.map((item) => {
             const isActive =
               (item.name === 'Home' && pathname === '/') ||
               (item.name === 'About Us' && pathname.startsWith('/about'));
 
             return (
               <div key={item.name}>
-                {item.dropdown ? (
-                  <div>
-                    <button
-                      className={`w-full text-left font-semibold flex justify-between items-center ${isActive ? 'text-[#DF8534]' : 'text-gray-800'
-                        }`}
-                      onClick={() => handleDropdownToggle(index)}
-                    >
-                      {item.name}
-                      <svg
-                        className={`w-4 h-4 transform transition-transform ${activeDropdown === index ? 'rotate-180' : ''
-                          }`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                <Link
+                  to={item.href}
+                  className={`block font-semibold ${
+                    isActive ? 'text-[#DF8534]' : 'text-gray-800'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+
+                {item.dropdown && (
+                  <div className="pl-4 mt-1 space-y-1">
+                    {item.dropdown.map((subItem) => (
+                      <Link
+                        key={subItem.name}
+                        to={subItem.href}
+                        className="block text-sm text-gray-600 hover:text-black"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </button>
-                    {activeDropdown === index && (
-                      <div className="pl-4 mt-2 space-y-1">
-                        {item.dropdown.map((subItem) => (
-                          <Link
-                            key={subItem.name}
-                            to={subItem.href}
-                            className="block text-sm text-gray-600 hover:text-black"
-                          >
-                            {subItem.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
+                        {subItem.name}
+                      </Link>
+                    ))}
                   </div>
-                ) : (
-                  <Link
-                    to={item.href}
-                    className={`block font-semibold ${isActive ? 'text-[#DF8534]' : 'text-gray-800'
-                      }`}
-                  >
-                    {item.name}
-                  </Link>
                 )}
               </div>
             );

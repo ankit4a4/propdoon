@@ -29,23 +29,23 @@ const Header = () => {
       name: 'About Us',
       href: '/about',
       dropdown: [
-        { name: 'Vision & Mission', href: '/#' },
-        { name: 'Company Overview', href: '/#' },
+        { name: 'Vision & Mission', href: '/about/vision' },
+        { name: 'Company Overview', href: '/about/overview' },
       ]
     },
     {
       name: 'Services',
-      href: '/#',
+      href: '/services',
       dropdown: [
-        { name: 'Construction', href: '/#' },
-        { name: 'Architecture', href: '/#' },
-        { name: 'Interior Designing', href: '/#' },
-        { name: 'Vastushastra', href: '/#' }
+        { name: 'Construction', href: '/services/construction' },
+        { name: 'Architecture', href: '/services/architecture' },
+        { name: 'Interior Designing', href: '/services/interior' },
+        { name: 'Vastushastra', href: '/services/vastu' }
       ]
     },
     {
       name: 'Properties',
-      href: '/#',
+      href: '/properties',
       dropdown: [
         { name: 'ROI Property', href: '/#' },
         { name: 'Residential Property', href: '/#' },

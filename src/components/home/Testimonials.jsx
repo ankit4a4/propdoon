@@ -50,7 +50,7 @@ const Testimonials = () => {
   }, [currentTestimonial]);
 
   return (
-    <section className="relative py-6 md:py-16 px-4 bg-gradient-to-b from-[#002B5B] to-[#0A1F3D] overflow-hidden">
+    <section className="relative py-6 md:md:-py-16 py-6 px-4 bg-gradient-to-b from-[#002B5B] to-[#0A1F3D] overflow-hidden">
       <div className="absolute inset-0 overflow-hidden opacity-10">
         <div className="absolute top-0 left-0 w-64 h-64 bg-[#64C0ED] rounded-full filter blur-[100px]"></div>
         <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#E62F35] rounded-full filter blur-[100px]"></div>

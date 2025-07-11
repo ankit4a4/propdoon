@@ -62,7 +62,7 @@ const HomeProperty = () => {
     };
 
     return (
-        <section className="relative py-6 md:py-16 px-4 bg-gradient-to-b from-[#f8fafc] to-[#E5EDF5] overflow-hidden">
+        <section className="relative py-6 md:md:-py-16 py-6 px-4 bg-gradient-to-b from-[#f8fafc] to-[#E5EDF5] overflow-hidden">
             {/* Decorative elements */}
             <div className="absolute inset-0 overflow-hidden opacity-15">
                 <div className="absolute top-10 left-10 w-64 h-64 bg-[#64C0ED] rounded-full filter blur-[100px] mix-blend-multiply"></div>

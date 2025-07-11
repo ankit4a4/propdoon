@@ -73,7 +73,7 @@ const WayChooseUs = () => {
     return (
         <section
             style={{ backgroundImage: `url(${bg})`, backgroundSize: "cover", backgroundPosition: "center" }}
-            className="relative py-6 md:py-16 px-4 overflow-hidden"
+            className="relative py-6 md:md:-py-16 py-6 px-4 overflow-hidden"
         >
             {/* Dark overlay */}
             <div className="absolute inset-0 bg-black opacity-80 z-0"></div>

@@ -12,6 +12,12 @@ const Header = () => {
   const pathname = location.pathname;
 
   useEffect(() => {
+    setIsMobileMenuOpen(false);
+
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, [pathname]);
+
+  useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
@@ -62,7 +68,9 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img className="h-10" src={logo2} alt="Logo" />
+            <Link to="/">
+              <img className="h-10" src={logo2} alt="Logo" />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}

@@ -5,7 +5,7 @@ import bg from "../../assets/home/bg2.webp";
 const WoWeAreAbout = () => {
     return (
         <section
-            className="relative py-6 md:py-16 overflow-hidden"
+            className="relative py-6 md:md:-py-16 py-6 overflow-hidden"
             style={{
                 backgroundImage: `url(${bg})`,
                 backgroundSize: "cover",

@@ -69,7 +69,7 @@ const HomeService = () => {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
             }}
-            className="relative py-6  md:py-16 px-4 overflow-hidden"
+            className="relative py-6  md:md:-py-16 py-6 px-4 overflow-hidden"
         >
             {/* Animated gradient elements */}
             <div className="absolute inset-0 overflow-hidden opacity-20 z-0">

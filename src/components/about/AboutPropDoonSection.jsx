@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutPropDoonSection = () => {
     return (
-        <section className="py-6 md:py-16 bg-[#FFFFFF]" data-aos="fade-up">
+        <section className="py-6 md:md:-py-16 py-6 bg-[#FFFFFF]" data-aos="fade-up">
             <div className="container-max px-4">
                 <div className="flex flex-col md:flex-row items-center gap-10 rounded-2xl shadow-xl p-3 md:p-6 border border-[#6764623b] bg-[#FFFFFF]">
                     {/* Left - Text Content */}

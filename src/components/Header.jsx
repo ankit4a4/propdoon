@@ -127,8 +127,8 @@ const Header = () => {
                 {item.dropdown && (
                   <div
                     className={`absolute left-0 mt-2 w-56 rounded-lg border bg-white py-2 shadow-xl transition-all duration-200 ${activeDropdown === idx
-                        ? 'opacity-100 visible translate-y-0'
-                        : 'opacity-0 invisible translate-y-2'
+                      ? 'opacity-100 visible translate-y-0'
+                      : 'opacity-0 invisible translate-y-2'
                       }`}
                   >
                     {item.dropdown.map((sub) => (
@@ -136,8 +136,8 @@ const Header = () => {
                         key={sub.name}
                         to={sub.href}
                         className={`block px-4 py-2 text-sm transition ${isSubActive(sub.href)
-                            ? `${ACTIVE_COLOR} font-semibold`
-                            : 'text-gray-800 hover:bg-gray-100'
+                          ? `${ACTIVE_COLOR} font-semibold`
+                          : 'text-gray-800 hover:bg-gray-100'
                           }`}
                       >
                         {sub.name}
@@ -200,8 +200,8 @@ const Header = () => {
                       key={sub.name}
                       to={sub.href}
                       className={`block text-sm ${isSubActive(sub.href)
-                          ? `${ACTIVE_COLOR} font-medium`
-                          : 'text-gray-600 hover:text-black'
+                        ? `${ACTIVE_COLOR} font-medium`
+                        : 'text-gray-600 hover:text-black'
                         }`}
                     >
                       {sub.name}

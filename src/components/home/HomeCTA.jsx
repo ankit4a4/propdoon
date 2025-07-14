@@ -23,7 +23,7 @@ const HomeCTA = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     {/* Primary CTA */}
                     <Link
-                        to="/#"
+                        to="/contact"
                         className="text-lg font-semibold px-8 py-4 rounded-lg transition-all"
                         style={{
                             backgroundColor: '#64C0ED',
@@ -42,7 +42,7 @@ const HomeCTA = () => {
 
                     {/* Secondary CTA */}
                     <Link
-                        to="/#"
+                        to="/properties"
                         className="text-lg font-semibold px-8 py-4 rounded-lg transition-all"
                         style={{
                             backgroundColor: '#FFFFFF',

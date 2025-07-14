@@ -17,7 +17,7 @@ const HeroAbout = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/60 z-10"></div>
 
                 {/* Black overlay */}
-                <div className="absolute inset-0 bg-black/70 z-20"></div>
+                <div className="absolute inset-0 bg-black/80 z-20"></div>
 
                 {/* Content */}
                 <div className="relative z-30 text-center text-white px-4">

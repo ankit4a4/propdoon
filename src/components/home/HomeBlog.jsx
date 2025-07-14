@@ -12,7 +12,8 @@ const HomeBlog = () => {
       date: 'December 19, 2023',
       image: img,
       category: 'Market Trends',
-      readTime: '5 min read'
+      readTime: '5 min read',
+      link : '/singleblog/1'
     },
     {
       title: 'Understanding Circle Rates in Uttarakhand: A Comprehensive Guide',
@@ -20,7 +21,8 @@ const HomeBlog = () => {
       date: 'December 13, 2021',
       image: img2,
       category: 'Legal Guide',
-      readTime: '4 min read'
+      readTime: '4 min read',
+       link : '/singleblog/2'
     },
     {
       title: 'Uttarakhand Developers Conclave 2024: Cabinet Ministers Attend Dehradun Event',
@@ -28,7 +30,8 @@ const HomeBlog = () => {
       date: 'June 16, 2020',
       image: img3,
       category: 'Events',
-      readTime: '3 min read'
+      readTime: '3 min read',
+       link : '/singleblog/3'
     },
   ];
 
@@ -94,7 +97,7 @@ const HomeBlog = () => {
                   <p className="text-gray-600 mb-5 flex-grow">
                     {post.excerpt}
                   </p>
-                  <Link to="#" className="inline-flex items-center text-[#E62F35] font-medium">
+                  <Link to={post.link} className="inline-flex items-center text-[#E62F35] font-medium">
                     Read More
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -108,7 +111,7 @@ const HomeBlog = () => {
 
         <div className="text-center mt-16">
           <Link
-            to="#"
+            to="/blog"
             className="inline-flex items-center justify-center px-8 py-4 bg-[#E62F35] text-white font-semibold text-lg rounded-lg transition-all duration-300"
           >
             <span className="flex items-center">

@@ -63,14 +63,14 @@ const HeroHome = () => {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Link
-                                to="/#"
+                                to="/properties"
                                 className="px-8 py-3.5 bg-[#64C0ED] hover:bg-[#50a8d3] text-black font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex items-center justify-center gap-2 group"
                             >
                                 <span>View Our Property</span>
                                 <HiArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                             </Link>
                             <Link
-                                to="/#"
+                                to="/contact"
                                 className="px-8 py-3.5 backdrop-blur-sm bg-white/10 hover:bg-white/20 border border-white/30 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex items-center justify-center gap-2"
                             >
                                 <FiPhoneCall className="h-5 w-5" />

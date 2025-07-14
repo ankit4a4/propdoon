@@ -29,6 +29,7 @@ import Commercial from './pages/properties/Commercial';
 import Updates from './pages/properties/Updates';
 
 import './App.css';
+import SingleBlog from './pages/SingleBlog';
 
 function App() {
   return (
@@ -51,9 +52,10 @@ function App() {
             <Route path="/properties/roi" element={<ROI />} />
             <Route path="/properties/residential" element={<Residential />} />
             <Route path="/properties/commercial" element={<Commercial />} />
-            <Route path="/properties/updates" element={<Updates />} />
+            <Route path="/properties/villa" element={<Updates />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/singleblog/:id" element={<SingleBlog />} />
           </Routes>
         </main>
         <Footer />

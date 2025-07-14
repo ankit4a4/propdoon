@@ -16,25 +16,25 @@ const HomeService = () => {
             icon: <FaBuilding className="w-8 h-8" />,
             title: 'Construction',
             description: 'Quality construction services with modern techniques and premium materials for lasting structures.',
-            href: '/services#construction'
+            href: '/services/construction'
         },
         {
             icon: <FaDraftingCompass className="w-8 h-8" />,
             title: 'Architecture',
             description: 'Innovative architectural designs that blend aesthetic appeal with functional excellence.',
-            href: '/services#architecture'
+            href: '/services/architecture'
         },
         {
             icon: <FaCouch className="w-8 h-8" />,
             title: 'Interior Design',
             description: 'Transform your spaces with bespoke interior designs that reflect your unique personality.',
-            href: '/services#interior'
+            href: '/services/interior'
         },
         {
             icon: <FaSun className="w-8 h-8" />,
             title: 'Vastushastra',
             description: 'Harmonious living through traditional Vastu principles combined with modern design.',
-            href: '/services#vastu'
+            href: '/services/vastu'
         }
     ];
 
@@ -121,7 +121,7 @@ const HomeService = () => {
                             transition={{ type: "spring", stiffness: 300 }}
                         >
                             <Link
-                                to={'/#'}
+                                to={service.href}
                                 className="group relative h-full block p-8 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-white/20 hover:border-[#64C0ED]/50"
                             >
                                 {/* Glow effect on hover */}
@@ -169,7 +169,7 @@ const HomeService = () => {
                     className="text-center mt-16"
                 >
                     <Link
-                        to={'/#'}
+                        to={'/services'}
                         className="inline-flex items-center px-8 py-3.5 bg-[#64C0ED] hover:bg-[#4AAEDB] text-white font-semibold rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl text-lg group"
                     >
                         <span className="mr-2">Discover All Services</span>

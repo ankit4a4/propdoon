@@ -18,8 +18,8 @@ const Footer = () => {
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
     { name: 'Properties', href: '/properties' },
-    { name: 'Blog', href: '/#' },
-    { name: 'Contact', href: '/#' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   const socialIcons = [
@@ -102,9 +102,9 @@ const Footer = () => {
                   style={{ color: '#64C0ED' }}
                 />
                 <div>
-                  <p style={{ color: '#D1D5DB' }}>123 Builder Street</p>
+                  <p style={{ color: '#D1D5DB' }}> 83J2+8WJ Dehradun,</p>
                   <p style={{ color: '#D1D5DB' }}>
-                    Dehradun, Uttarakhand 248001
+                    Uttarakhand, India
                   </p>
                 </div>
               </div>

@@ -11,28 +11,28 @@ const HomeProperty = () => {
         {
             title: 'Residential Properties',
             description: 'Uttarakhand has witnessed steady growth in real estate value over the years. With its scenic beauty, pleasant climate, and increasing urbanization, residential properties in Uttarakhand have the potential for long-term appreciation.',
-            link: '/residential-properties',
+            link: '/properties/residential',
             image: img1,
             stats: '12% Annual Growth'
         },
         {
             title: 'Commercial Properties',
             description: 'Uttarakhand offers excellent commercial opportunities with growing tourism and infrastructure. Our commercial properties provide high visibility and strategic locations for businesses.',
-            link: '/commercial-properties',
+            link: '/properties/commercial',
             image: img2,
             stats: '8.5% Rental Yield'
         },
         {
             title: 'Villa & Farmhouses',
             description: 'Experience luxury living amidst nature with our premium villas and farmhouses. These properties offer privacy, tranquility, and breathtaking views of Uttarakhand\'s landscapes.',
-            link: '/villas-farmhouses',
+            link: '/properties/villa',
             image: img3,
             stats: 'Luxury Living'
         },
         {
             title: 'ROI Properties',
             description: 'Our carefully selected high-ROI properties offer investors exceptional returns. With our market expertise, we identify properties with the highest appreciation potential.',
-            link: '/roi-properties',
+            link: '/properties/roi',
             image: img4,
             stats: '15-20% ROI'
         },
@@ -94,7 +94,7 @@ const HomeProperty = () => {
                 <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-8" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
                     {categories.map((item, index) => (
                         <motion.div key={index} variants={fadeIn} whileHover={{ y: -10 }} transition={{ type: "spring", stiffness: 300 }}>
-                            <Link to={'/#'} className="group relative block h-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500">
+                            <Link to={item.link} className="group relative block h-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500">
                                 <div className="relative h-80 overflow-hidden">
                                     <img src={item.image} alt={item.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
@@ -127,7 +127,7 @@ const HomeProperty = () => {
 
                 {/* Button */}
                 <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mt-20">
-                    <Link to={'/#'} className="inline-flex items-center px-8 py-4 bg-[#64C0ED]  text-white font-semibold rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl text-lg relative overflow-hidden ">
+                    <Link to={'/properties'} className="inline-flex items-center px-8 py-4 bg-[#64C0ED]  text-white font-semibold rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl text-lg relative overflow-hidden ">
                         <span className="relative z-10">Browse All Properties</span>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 relative z-10 transition-transform group-hover:translate-x-2" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />

@@ -25,6 +25,8 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+
+
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'auto';
   }, [isMobileMenuOpen]);
@@ -53,14 +55,14 @@ const Header = () => {
       name: 'Properties',
       href: '/properties',
       dropdown: [
-        { name: 'ROI Property', href: '/#' },
-        { name: 'Residential Property', href: '/#' },
-        { name: 'Commercial Property', href: '/#' },
-        { name: 'Construction Updates', href: '/#' }
+        { name: 'ROI Property', href: '/properties/roi' },
+        { name: 'Residential Property', href: '/properties/residential' },
+        { name: 'Commercial Property', href: '/properties/commercial' },
+        { name: 'Farmhouses/Villas', href: '/properties/villa' }
       ]
     },
-    { name: 'Blog', href: '/#' },
-    { name: 'Contact', href: '/#' }
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/contact' }
   ];
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-sm shadow-md' : 'bg-transparent'}`}>

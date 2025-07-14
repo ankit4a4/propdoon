@@ -22,7 +22,7 @@ const OurStory = () => {
                             sellers, and investors alike.
                         </p>
                         <Link
-                            to="/#"
+                            to="/contact"
                             className="inline-block px-6 py-3 rounded-md text-white font-medium bg-[#64C0ED] hover:bg-[#4DA8D8] transition duration-300"
                         >
                             Work With Us

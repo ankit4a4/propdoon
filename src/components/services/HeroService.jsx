@@ -6,7 +6,7 @@ const HeroService = () => {
         <>
             <section className="relative h-96 flex items-center justify-center">
                 {/* Dark transparent overlay */}
-                <div className="absolute inset-0 bg-black/40 z-0"></div>
+                <div className="absolute inset-0 bg-black/70 z-0"></div>
 
                 {/* Gradient overlay using brand colors */}
                 <div className="absolute inset-0 bg-black/60 z-0"></div>

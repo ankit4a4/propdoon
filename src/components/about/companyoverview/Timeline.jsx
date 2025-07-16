@@ -3,25 +3,25 @@ import React from 'react';
 const Timeline = () => {
   const milestones = [
     {
-      year: '2012',
+      year: '2015',
       title: 'PropDoon Founded',
       description:
         'Started in Dehradun with a mission to simplify real‑estate transactions.',
     },
     {
-      year: '2014',
+      year: '2017',
       title: '100+ Deals Closed',
       description:
         'Achieved our first century of successful property transactions.',
     },
     {
-      year: '2017',
+      year: '2020',
       title: 'Service Expansion',
       description:
         'Added legal support & investment advisory to our core consultancy.',
     },
     {
-      year: '2020',
+      year: '2022',
       title: 'Tech‑Enabled Platform',
       description:
         'Launched our data‑driven property intelligence portal for clients.',

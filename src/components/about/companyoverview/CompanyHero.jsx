@@ -17,7 +17,7 @@ const CompanyHero = () => {
             <div className="relative z-20 text-center text-white px-4">
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">Company Overview</h1>
                 <p className="text-xl max-w-2xl mx-auto">
-                    Building excellence for over 15 years with innovation and integrity
+                    Building excellence for over 10 years with innovation and integrity
                 </p>
             </div>
         </section>

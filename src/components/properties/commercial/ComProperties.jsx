@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { FaMapMarkerAlt, FaChartLine, FaFilter, FaStore, FaIndustry, FaBuilding } from 'react-icons/fa';
-import bg from '../../../assets/home/image4.jpg'; 
+import bg from '../../../assets/home/image4.jpg';
 import img1 from "../../../assets/properties/Com/1.jpg"
 import img2 from "../../../assets/properties/Com/2.jpg"
 import img3 from "../../../assets/properties/Com/3.webp"
-import img4 from "../../../assets/properties/Com/4.webp"
-import img5 from "../../../assets/properties/Com/5.jpg"
+import img4 from "../../../assets/properties/Com/img.jpeg"
+import img5 from "../../../assets/properties/Com/img2.jpeg"
 import img6 from "../../../assets/properties/Com/6.jpg"
 const ComProperties = () => {
     const [activeFilter, setActiveFilter] = useState('all');
@@ -16,10 +16,10 @@ const ComProperties = () => {
     const commercialProperties = [
         {
             id: 1,
-            title: 'Premium Office Complex',
+            title: 'Premium Offices',
             type: 'office',
-            image: img1, 
-            location: 'Rajpur Road, Dehradun',
+            image: img1,
+            location: 'Dehradun',
             roi: '15%',
             rental: '₹150/sq ft/month',
             description: 'State-of-the-art office complex in prime business location.',
@@ -30,44 +30,13 @@ const ComProperties = () => {
                 'Professional property management'
             ],
         },
-        {
-            id: 2,
-            title: 'Retail Shopping Plaza',
-            type: 'retail',
-            image: img2, 
-            location: 'Clock Tower, Dehradun',
-            roi: '16%',
-            rental: '₹200/sq ft/month',
-            description: 'Modern shopping complex with high footfall potential.',
-            highlights: [
-                'High footfall city center location',
-                'Mix of retail and F&B opportunities',
-                'Anchor tenants already committed',
-                'Excellent public transportation access'
-            ],
-        },
-        {
-            id: 3,
-            title: 'Industrial Warehouse',
-            type: 'warehouse',
-            image: img3, 
-            location: 'Selaqui Industrial Area, Dehradun',
-            roi: '12%',
-            rental: '₹80/sq ft/month',
-            description: 'Spacious warehouse facility with modern logistics features.',
-            highlights: [
-                'Strategic location for logistics',
-                'High ceiling and loading facilities',
-                'Excellent road connectivity',
-                'Suitable for various industries'
-            ],
-        },
+
         {
             id: 4,
-            title: 'Corporate Office Tower',
+            title: 'Corporate Offices',
             type: 'office',
-            image: img4, 
-            location: 'IT Park, Sahastradhara Road, Dehradun',
+            image: img4,
+            location: 'Dehradun',
             roi: '18%',
             rental: '₹180/sq ft/month',
             description: 'Ultra-modern corporate tower with smart building features.',
@@ -79,11 +48,28 @@ const ComProperties = () => {
             ],
         },
         {
-            id: 5,
-            title: 'Boutique Retail Spaces',
+            id: 2,
+            title: 'Retail Shopping Plaza',
             type: 'retail',
-            image: img5, 
-            location: 'Paltan Bazaar, Dehradun',
+            image: img2,
+            location: 'Dehradun',
+            roi: '16%',
+            rental: '₹200/sq ft/month',
+            description: 'Modern shopping complex with high footfall potential.',
+            highlights: [
+                'High footfall city center location',
+                'Mix of retail and F&B opportunities',
+                'Anchor tenants already committed',
+                'Excellent public transportation access'
+            ],
+        },
+
+        {
+            id: 5,
+            title: 'Retail Spaces',
+            type: 'retail',
+            image: img5,
+            location: 'Dehradun',
             roi: '14%',
             rental: '₹250/sq ft/month',
             description: 'Premium retail spaces on busy commercial street.',
@@ -94,22 +80,7 @@ const ComProperties = () => {
                 'Good footfall and accessibility'
             ],
         },
-        {
-            id: 6,
-            title: 'Logistics Warehouse Hub',
-            type: 'warehouse',
-            image: img6, 
-            location: 'Harrawala, Dehradun',
-            roi: '13%',
-            rental: '₹90/sq ft/month',
-            description: 'Large-scale logistics facility with specialized features.',
-            highlights: [
-                'Direct highway access',
-                'Multi-modal transportation hub',
-                'Cold storage capabilities',
-                'Suitable for e-commerce and logistics'
-            ],
-        }
+
     ];
 
 
@@ -124,8 +95,7 @@ const ComProperties = () => {
                 return <FaBuilding className="mr-1" />;
             case 'retail':
                 return <FaStore className="mr-1" />;
-            case 'warehouse':
-                return <FaIndustry className="mr-1" />;
+
             default:
                 return null;
         }
@@ -148,7 +118,7 @@ const ComProperties = () => {
 
                 {/* Filter Buttons */}
                 <div className="flex flex-wrap justify-center gap-3 mb-10">
-                    {['all', 'office', 'retail', 'warehouse'].map((filter) => {
+                    {['all', 'office', 'retail'].map((filter) => {
                         const Icon =
                             filter === 'all'
                                 ? FaFilter
@@ -176,7 +146,7 @@ const ComProperties = () => {
                 </div>
 
                 {/* Property Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                     {filteredProperties.map((property) => (
                         <div
                             key={property.id}
@@ -207,20 +177,7 @@ const ComProperties = () => {
 
                                 <p className="text-sm text-gray-600 mb-4 line-clamp-2">{property.description}</p>
 
-                                <div className="grid grid-cols-2 gap-4 mb-5">
-                                    <div className="bg-gray-100 p-3 rounded-lg">
-                                        <p className="text-xs text-gray-500">Rental</p>
-                                        <p className="text-xl font-bold" style={{ color: primaryColor }}>
-                                            {property.rental}
-                                        </p>
-                                    </div>
-                                    <div className="bg-gray-100 p-3 rounded-lg">
-                                        <p className="text-xs text-gray-500">Annual ROI</p>
-                                        <p className="text-xl font-bold" style={{ color: primaryColor }}>
-                                            {property.roi}
-                                        </p>
-                                    </div>
-                                </div>
+
 
                                 <div className="space-y-2 mb-5">
                                     {property.highlights.map((point, index) => (

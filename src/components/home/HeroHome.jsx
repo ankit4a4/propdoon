@@ -51,8 +51,6 @@ const HeroHome = () => {
                     {/* Left Side */}
                     <div className="text-white">
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="w-16 h-1 bg-[#64C0ED]"></div>
-                            <span className="text-[#64C0ED] font-medium tracking-wider">DEHRADUN DEVELOPERS</span>
                         </div>
                         <h1 className="text-4xl sm:text-3xl md:text-5xl font-bold leading-tight mb-6">
                             Crafting <span className="text-[#64C0ED]">Modern</span> Living

@@ -23,22 +23,16 @@ const ResiOverView = () => {
                         <p>
                             With its breathtaking landscapes and increasing demand for quality housing, Uttarakhand has become a hotspot for smart residential investments.
                         </p>
-
-                        {/* STATS */}
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center pt-4">
-                            <div>
-                                <div className="text-2xl font-bold text-[#E62F35] mb-1">12–20%</div>
-                                <div className="text-gray-600 text-sm">Annual ROI</div>
-                            </div>
-                            <div>
-                                <div className="text-2xl font-bold text-[#E62F35] mb-1">5–8 Years</div>
-                                <div className="text-gray-600 text-sm">Payback Period</div>
-                            </div>
-                            <div>
-                                <div className="text-2xl font-bold text-[#E62F35] mb-1">100+</div>
-                                <div className="text-gray-600 text-sm">Successful Projects</div>
-                            </div>
-                        </div>
+  <p>
+                        Propdoon leverages deep market knowledge and local expertise to help clients find high-performing residential properties across Uttarakhand.
+                    </p>
+                    <p>
+                        We align your investment strategy with government-backed growth corridors, tourism potential, and infrastructure upgrades for optimal appreciation.
+                    </p>
+                    <p>
+                        From family homes to vacation retreats, our portfolio offers tailored options that balance lifestyle needs and return on investment.
+                    </p>
+                       
                     </div>
 
                     {/* RIGHT: Image */}
@@ -53,15 +47,7 @@ const ResiOverView = () => {
 
                 {/* BOTTOM ROW: Shortened Content */}
                 <div className="text-gray-700 space-y-4 container mx-auto leading-relaxed">
-                    <p>
-                        Propdoon leverages deep market knowledge and local expertise to help clients find high-performing residential properties across Uttarakhand.
-                    </p>
-                    <p>
-                        We align your investment strategy with government-backed growth corridors, tourism potential, and infrastructure upgrades for optimal appreciation.
-                    </p>
-                    <p>
-                        From family homes to vacation retreats, our portfolio offers tailored options that balance lifestyle needs and return on investment.
-                    </p>
+                  
                 </div>
             </div>
         </section>

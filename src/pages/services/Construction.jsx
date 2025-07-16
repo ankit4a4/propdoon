@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import HeroContraction from '../../components/services/contraction/HeroContraction';
 import ConstructionOverview from '../../components/services/contraction/ConstructionOverview';
 import ArchitectureTypes from "../../components/services/architecture/ArchitectureTypes"
-import con1 from "../../assets/services/contraction/con1.jpg"
-import con2 from "../../assets/services/contraction/con2.jpg"
-import con3 from "../../assets/services/contraction/con3.jpg"
+import con1 from "../../assets/services/contraction/1.jpeg"
+import con2 from "../../assets/services/contraction/2.jpeg"
+import con3 from "../../assets/services/contraction/3.jpeg"
 import bgHero from "../../assets/services/contraction/con4.jpg"
 import ContractionProcess from '../../components/services/contraction/ContractionProcess';
 import HomeCTA from "../../components/home/HomeCTA"
@@ -63,7 +63,7 @@ const Construction = () => {
       />
       <ContractionProcess />
       <HomeCTA />
-     
+
     </div>
   );
 };

@@ -1,7 +1,7 @@
 // src/components/Header.jsx
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logo2 from '../assets/logo2.webp';
+import logo2 from '../assets/logo4.png';
 import { FiMenu, FiX } from 'react-icons/fi';
 
 const ACTIVE_COLOR = 'text-[#DF8534]'; // theme red‑orange
@@ -64,13 +64,13 @@ const Header = () => {
       ],
     },
     {
-      name: 'Properties',
+      name: 'Buy/Sell Properties',
       href: '/properties',
       dropdown: [
         { name: 'ROI Property', href: '/properties/roi' },
         { name: 'Residential Property', href: '/properties/residential' },
         { name: 'Commercial Property', href: '/properties/commercial' },
-        { name: 'Farmhouses/Villas', href: '/properties/villa' },
+        // { name: 'Farmhouses/Villas', href: '/properties/villa' },
       ],
     },
     { name: 'Blog', href: '/blog' },
@@ -88,7 +88,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* logo */}
           <Link to="/">
-            <img src={logo2} alt="Logo" className="h-10" />
+            <img src={logo2} alt="Logo" className="h-15" />
           </Link>
 
           {/* ---------- desktop nav ---------- */}

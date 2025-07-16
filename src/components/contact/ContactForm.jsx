@@ -6,7 +6,7 @@ import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
-} from 'react-icons/fa';     // ← make sure react‑icons is installed!
+} from 'react-icons/fa';
 
 const ContactForm = () => {
   /* ---------------- state ---------------- */
@@ -41,7 +41,7 @@ const ContactForm = () => {
     {
       title: 'Visit Our Office',
       details: [
-        ' 83J2+8WJ Dehradun, Uttarakhand, India'
+        ' 2nd Floor, Abhishek Tower,  Subhash Rd, opposite ST.JOSEPH SCHOOL, Irigation Colony, Karanpur, Dehradun, Uttarakhand 248001'
       ],
       icon: <FaMapMarkerAlt className="text-white text-lg" />,
       color: '#64C0ED',
@@ -112,7 +112,7 @@ const ContactForm = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#64C0ED] outline-none"
                 >
-                  <option value="">Service Interest</option>
+                  <option value="">Looking for Properties</option>
                   {services.map((s) => (
                     <option key={s}>{s}</option>
                   ))}

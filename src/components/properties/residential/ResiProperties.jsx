@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import { FaMapMarkerAlt, FaChartLine, FaFilter, FaHome, FaBuilding } from 'react-icons/fa';
 import { GiFamilyHouse } from 'react-icons/gi';
 import bg from '../../../assets/home/image4.jpg';
-import img1 from "../../../assets/properties/residential/property1.webp"
-import img2 from "../../../assets/properties/residential/property2.jpg"
-import img3 from "../../../assets/properties/residential/property3.jpeg"
-import img4 from "../../../assets/properties/residential/property4.jpg"
-import img5 from "../../../assets/properties/residential/property5.jpg"
-import img6 from "../../../assets/properties/residential/property6.jpg"
+import img1 from "../../../assets/properties/residential/image1.jpeg"
+import img2 from "../../../assets/properties/residential/Image3.jpeg"
+import img4 from "../../../assets/properties/residential/image4.jpeg"
+import img5 from "../../../assets/properties/residential/image5.jpeg"
 
 const ResiProperties = () => {
     const [activeFilter, setActiveFilter] = useState('all');
@@ -17,10 +15,10 @@ const ResiProperties = () => {
     const ResiProperty = [
         {
             id: 1,
-            title: 'Luxury Hill View Villa',
+            title: 'Luxury  Villa',
             type: 'villa',
             image: img1,
-            location: 'Mussoorie Road, Dehradun',
+            location: 'Dehradun',
             roi: '12%',
             payback: '8.5 years',
             description: 'Stunning villa with panoramic hill views and premium amenities.',
@@ -31,12 +29,13 @@ const ResiProperties = () => {
                 'Gated community with 24/7 security',
             ],
         },
+
         {
-            id: 2,
-            title: 'Modern City Apartment',
+            id: 3,
+            title: 'Luxury Apartment',
             type: 'apartment',
             image: img2,
-            location: 'Rajpur Road, Dehradun',
+            location: ' Dehradun',
             roi: '10%',
             payback: '10 years',
             description: 'Contemporary apartment in the heart of the city with modern amenities.',
@@ -47,70 +46,40 @@ const ResiProperties = () => {
                 'Excellent public transportation access',
             ],
         },
-        {
-            id: 3,
-            title: 'Family Independent House',
-            type: 'house',
-            image: img3,
-            location: 'Clement Town, Dehradun',
-            roi: '9%',
-            payback: '11 years',
-            description: 'Spacious independent house perfect for families with children.',
-            highlights: [
-                'Quiet suburban neighborhood',
-                'Large garden space for children',
-                'Independent parking and storage',
-                'Close to schools and hospitals',
-            ],
-        },
+
         {
             id: 4,
-            title: 'Eco-Friendly Villa',
-            type: 'villa',
+            title: 'Builder Floor',
+            type: 'Flat',
             image: img4,
-            location: 'Sahastradhara Road, Dehradun',
+            location: 'Dehradun',
             roi: '13%',
             payback: '7.8 years',
-            description: 'Sustainable villa with eco-friendly features and green technology.',
+            description: 'Luxury flat with modern amenities.',
             highlights: [
-                'Solar power and rainwater harvesting',
-                'Energy-efficient design and materials',
-                'Organic garden and composting area',
-                'EV charging station included',
+                'Prime city center location',
+                'Walking distance to shopping and dining',
+                'Modern amenities and facilities',
+                'Excellent public transportation access',
             ],
         },
         {
             id: 5,
-            title: 'Smart Tech Apartment',
-            type: 'apartment',
+            title: 'Residential Plot',
+            type: 'Plot',
             image: img5,
-            location: 'Jakhan, Dehradun',
+            location: 'Dehradun',
             roi: '11%',
             payback: '9 years',
-            description: 'Smart home apartment designed for modern living and automation.',
+            description: 'Plot for modern living.',
             highlights: [
-                'Smart home automation systems',
-                'Located in emerging tech hub',
-                'Co-working spaces and modern amenities',
-                'Perfect for young professionals',
+                'Panoramic views of Dehradun hills',
+                'Premium location with excellent connectivity',
+                'Prime city center location',
+                'Gated community with 24/7 security',
             ],
         },
-        {
-            id: 6,
-            title: 'Classic Family Home',
-            type: 'house',
-            image: img6,
-            location: 'Dalanwala, Dehradun',
-            roi: '10%',
-            payback: '9.5 years',
-            description: 'Traditional home with spacious layout, ideal for families seeking comfort and security.',
-            highlights: [
-                'Spacious front and backyard',
-                'Ample parking and private driveway',
-                'Proximity to parks and schools',
-                'Secure and peaceful locality',
-            ],
-        },
+
     ];
 
     const filteredProperties =
@@ -124,7 +93,7 @@ const ResiProperties = () => {
                 return <GiFamilyHouse className="mr-1" />;
             case 'apartment':
                 return <FaBuilding className="mr-1" />;
-            case 'house':
+            case 'flat':
                 return <FaHome className="mr-1" />;
             default:
                 return null;
@@ -148,7 +117,7 @@ const ResiProperties = () => {
 
                 {/* Filter Buttons */}
                 <div className="flex flex-wrap justify-center gap-3 mb-10">
-                    {['all', 'villa', 'apartment', 'house'].map((filter) => {
+                    {['all', 'villa', 'apartment', 'flat'].map((filter) => {
                         const Icon =
                             filter === 'all'
                                 ? FaFilter
@@ -176,7 +145,7 @@ const ResiProperties = () => {
                 </div>
 
                 {/* Property Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-4  gap-8">
                     {filteredProperties.map((property) => (
                         <div
                             key={property.id}
@@ -186,7 +155,7 @@ const ResiProperties = () => {
                                 <img
                                     src={property.image}
                                     alt={property.title}
-                                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                                    className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-105"
                                 />
                                 <div className="absolute top-4 right-4 z-10">
                                     <span className="inline-flex items-center px-3 py-1 rounded-full bg-black/80 text-sm text-white">
@@ -207,20 +176,6 @@ const ResiProperties = () => {
 
                                 <p className="text-sm text-gray-600 mb-4 line-clamp-2">{property.description}</p>
 
-                                <div className="grid grid-cols-2 gap-4 mb-5">
-                                    <div className="bg-gray-100 p-3 rounded-lg">
-                                        <p className="text-xs text-gray-500">Annual ROI</p>
-                                        <p className="text-xl font-bold" style={{ color: primaryColor }}>
-                                            {property.roi}
-                                        </p>
-                                    </div>
-                                    <div className="bg-gray-100 p-3 rounded-lg">
-                                        <p className="text-xs text-gray-500">Payback Period</p>
-                                        <p className="text-xl font-bold" style={{ color: primaryColor }}>
-                                            {property.payback}
-                                        </p>
-                                    </div>
-                                </div>
 
                                 <div className="space-y-2 mb-5">
                                     {property.highlights.map((point, index) => (

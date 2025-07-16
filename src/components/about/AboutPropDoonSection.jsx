@@ -18,7 +18,7 @@ const AboutPropDoonSection = () => {
                         </h2>
 
                         <p className="text-lg text-[#1C1C1C]">
-                            Founded in 2012, <strong>PropDoon</strong> has emerged as Dehradun's most trusted name in real estate consultancy. We simplify property transactions and empower clients with market clarity and professional support.
+                            Founded in 2015, <strong>PropDoon</strong> has emerged as Dehradun's most trusted name in real estate consultancy. We simplify property transactions and empower clients with market clarity and professional support.
                         </p>
 
                         <p className="text-lg text-[#1C1C1C]">

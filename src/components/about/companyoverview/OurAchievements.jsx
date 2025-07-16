@@ -4,8 +4,8 @@ import img from "../../../assets/about/companyoverview/properties.jpg"
 
 const OurAchievements = () => {
     const stats = [
-        { number: '500+', label: 'Projects Completed', icon: '🏗️' },
-        { number: '15+', label: 'Years Experience', icon: '📅' },
+        { number: '100+', label: 'Projects Completed', icon: '🏗️' },
+        { number: '10+', label: 'Years Experience', icon: '📅' },
         { number: '1000+', label: 'Happy Clients', icon: '😊' },
         { number: '50+', label: 'Expert Team', icon: '👥' }
     ];

@@ -1,5 +1,5 @@
 import React from 'react';
-import img from "../../../assets/home/image2.jpeg";
+import img from "../../../assets/properties/Com/img3.jpeg";
 
 const ComDetails = () => {
     return (
@@ -27,21 +27,7 @@ const ComDetails = () => {
                             with attractive pre-launch pricing.
                         </p>
 
-                        {/* Stats */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <div className="text-center">
-                                <div className="text-2xl font-bold text-[#E62F35] mb-1">12–18%</div>
-                                <div className="text-gray-600 text-sm">Annual ROI</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-2xl font-bold text-[#E62F35] mb-1">100+</div>
-                                <div className="text-gray-600 text-sm">Business Clients</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-2xl font-bold text-[#E62F35] mb-1">25+</div>
-                                <div className="text-gray-600 text-sm">Commercial Projects</div>
-                            </div>
-                        </div>
+                 
                     </div>
 
                     {/* RIGHT: Image */}

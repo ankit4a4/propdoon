@@ -1,5 +1,5 @@
 import React from 'react';
-import img from "../../../assets/home/image2.jpeg";
+import img from "../../../assets/properties/Com/img3.jpeg";
 
 const ComHero = () => {
     return (

@@ -4,9 +4,9 @@ import ArchitectureTypes from '../../components/services/architecture/Architectu
 import DesignProcess from '../../components/services/architecture/DesignProcess';
 import HomeCTA from "../../components/home/HomeCTA"
 import bgHero from '../../assets/services/archi/archi4.jpg';
-import img1 from '../../assets/services/archi/archi1.jpg';
-import img2 from '../../assets/services/archi/archi2.jpg';
-import img3 from '../../assets/services/archi/archi3.jpg';
+import img1 from '../../assets/services/archi/1.jpeg';
+import img2 from '../../assets/services/archi/2.jpeg';
+import img3 from '../../assets/services/archi/3.jpeg';
 
 const Architecture = () => {
 

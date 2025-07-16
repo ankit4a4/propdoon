@@ -55,10 +55,7 @@ const RoiOverview = () => {
                 </div>
 
                 {/* BOTTOM ROW: Long Content (full width) */}
-                <div className="text-gray-700 space-y-2 -mt-10 container mx-auto leading-relaxed">
-
-
-
+                <div className="text-black space-y-2 -mt-10 container mx-auto leading-relaxed">
                     <p>
                         The Himalayan belt makes Uttarakhand a hotspot for adventure tourism.
                         Lodges, cottages, and resorts dedicated to adventure seekers perform well during seasonal peaks.

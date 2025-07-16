@@ -54,7 +54,7 @@ const AboutSection = () => {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent flex items-end p-8">
                                 <div className="text-white">
-                                    <h3 className="text-xl font-semibold mb-2">Our Dehradun Headquarters</h3>
+                                    <h3 className="text-xl font-semibold mb-2">Our Dehradun Office</h3>
                                     <p className="text-gray-200">Where innovation meets real estate expertise</p>
                                 </div>
                             </div>

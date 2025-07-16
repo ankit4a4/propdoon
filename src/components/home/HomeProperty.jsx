@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import img1 from "../../assets/home/image1.jpg";
-import img2 from "../../assets/home/image2.jpeg";
-import img3 from "../../assets/home/image3.webp";
+import img2 from "../../assets/properties/Com/img3.jpeg";
 import img4 from "../../assets/home/image4.jpg";
 
 const HomeProperty = () => {
@@ -22,7 +21,7 @@ const HomeProperty = () => {
             image: img2,
             stats: '8.5% Rental Yield'
         },
-       
+
         {
             title: 'ROI Properties',
             description: 'Our carefully selected high-ROI properties offer investors exceptional returns. With our market expertise, we identify properties with the highest appreciation potential.',
@@ -85,14 +84,32 @@ const HomeProperty = () => {
                 </motion.div>
 
                 {/* Cards */}
-                <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-8" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
+                <motion.div
+                    className="md:grid md:grid-cols-3 md:gap-8 space-y-8 md:space-y-0"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={staggerContainer}
+                >
                     {categories.map((item, index) => (
-                        <motion.div key={index} variants={fadeIn} whileHover={{ y: -10 }} transition={{ type: "spring", stiffness: 300 }}>
-                            <Link to={item.link} className="group relative block h-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500">
+                        <motion.div
+                            key={index}
+                            variants={fadeIn}
+                            whileHover={{ y: -10 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                            className={`${index === 2 ? 'mx-auto lg:mx-0' : ''}`}
+                        >
+                            <Link
+                                to={item.link}
+                                className="group relative block h-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500"
+                            >
                                 <div className="relative h-80 overflow-hidden">
-                                    <img src={item.image} alt={item.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                                    <img
+                                        src={item.image}
+                                        alt={item.title}
+                                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                    />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
-                                   
                                 </div>
 
                                 <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
@@ -105,8 +122,17 @@ const HomeProperty = () => {
                                         </p>
                                         <span className="inline-flex items-center text-white group-hover:text-[#64C0ED] font-medium">
                                             Explore Properties
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-2" viewBox="0 0 20 20" fill="currentColor">
-                                                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-2"
+                                                viewBox="0 0 20 20"
+                                                fill="currentColor"
+                                            >
+                                                <path
+                                                    fillRule="evenodd"
+                                                    d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                                                    clipRule="evenodd"
+                                                />
                                             </svg>
                                         </span>
                                     </div>
@@ -116,6 +142,7 @@ const HomeProperty = () => {
                         </motion.div>
                     ))}
                 </motion.div>
+
 
                 {/* Button */}
                 <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mt-20">

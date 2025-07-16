@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 const OurStory = () => {
@@ -12,7 +11,7 @@ const OurStory = () => {
                             Our Story
                         </h2>
                         <p className="text-lg leading-relaxed text-[#333] mb-6">
-                            Founded in 2012, <strong className="text-[#E62F35]">PropDoon</strong> has established itself as
+                            Founded in 2015 , <strong className="text-[#E62F35]">PropDoon</strong> has established itself as
                             Dehradun's premier real estate consultancy, helping clients navigate
                             the property market with confidence and ease.
                         </p>

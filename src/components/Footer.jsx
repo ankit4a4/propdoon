@@ -102,10 +102,8 @@ const Footer = () => {
                   style={{ color: '#64C0ED' }}
                 />
                 <div>
-                  <p style={{ color: '#D1D5DB' }}> 83J2+8WJ Dehradun,</p>
-                  <p style={{ color: '#D1D5DB' }}>
-                    Uttarakhand, India
-                  </p>
+                  <p style={{ color: '#D1D5DB' }}> 2nd Floor, Abhishek Tower,  Subhash Road, opposite ST.JOSEPH SCHOOL, Irrigation Colony, Karanpur, Dehradun, Uttarakhand,  248001</p>
+                  
                 </div>
               </div>
               <div className="flex items-center space-x-3">

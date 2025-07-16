@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { FaMapMarkerAlt, FaChartLine, FaHotel, FaBuilding, FaHome, FaFilter } from 'react-icons/fa';
 
 import img1 from '../../../assets/properties/roi/1.jpg';
-import img2 from '../../../assets/properties/roi/2.jpg';
+import img2 from '../../../assets/properties/roi/img1.jpeg';
 import img3 from '../../../assets/properties/roi/3.webp';
-import img4 from '../../../assets/properties/roi/4.jpg';
+import img4 from '../../../assets/properties/roi/hotels.jpeg';
 import img5 from '../../../assets/properties/roi/5.jpeg';
-import img6 from '../../../assets/properties/roi/6.webp';
+import img6 from '../../../assets/properties/roi/img2.jpeg';
 import bg from "../../../assets/home/image4.jpg"
 const RoiProperty = () => {
     const [activeFilter, setActiveFilter] = useState('all');
@@ -17,8 +17,8 @@ const RoiProperty = () => {
     const roiProperties = [
         {
             id: 1,
-            title: 'Himalayan Boutique Retreat',
-            type: 'hotel',
+            title: 'Property in the lap of hills',
+            type: 'Residential',
             image: img1,
             location: 'Mussoorie Hills',
             roi: '18%',
@@ -36,7 +36,7 @@ const RoiProperty = () => {
             title: 'Dehradun Commercial Arcade',
             type: 'commercial',
             image: img2,
-            location: 'Rajpur Road, Dehradun',
+            location: ' Dehradun',
             roi: '16%',
             payback: '6.2 years',
             description:
@@ -52,7 +52,7 @@ const RoiProperty = () => {
             title: 'Luxury Villas in Nature',
             type: 'residential',
             image: img3,
-            location: 'Ranikhet, Uttarakhand',
+            location: ' Dehradun',
             roi: '13%',
             payback: '7.5 years',
             description:
@@ -65,10 +65,10 @@ const RoiProperty = () => {
         },
         {
             id: 4,
-            title: 'Airport Business Hotel',
+            title: 'Hotels',
             type: 'hotel',
             image: img4,
-            location: 'Near Jolly Grant Airport',
+            location: 'Dehradun',
             roi: '20%',
             payback: '4.8 years',
             description:
@@ -84,7 +84,7 @@ const RoiProperty = () => {
             title: 'City Center Retail Hub',
             type: 'commercial',
             image: img5,
-            location: 'Clock Tower Area, Dehradun',
+            location: 'Dehradun',
             roi: '15%',
             payback: '6.5 years',
             description:
@@ -97,10 +97,10 @@ const RoiProperty = () => {
         },
         {
             id: 6,
-            title: 'Serviced Apartments for Professionals',
+            title: 'Serviced Apartments',
             type: 'residential',
             image: img6,
-            location: 'IT Hub Area, Dehradun',
+            location: 'Dehradun',
             roi: '14%',
             payback: '7.1 years',
             description:
@@ -211,17 +211,7 @@ const RoiProperty = () => {
 
                                 <p className="text-sm text-gray-600 mb-4 line-clamp-2">{property.description}</p>
 
-                                <div className="grid grid-cols-2 gap-4 mb-5">
-                                    <div className="bg-gray-100 p-3 rounded-lg">
-                                        <p className="text-xs text-gray-500">Annual ROI</p>
-                                        <p className="text-xl font-bold" style={{ color: primaryColor }}>{property.roi}</p>
-                                    </div>
-                                    <div className="bg-gray-100 p-3 rounded-lg">
-                                        <p className="text-xs text-gray-500">Payback Period</p>
-                                        <p className="text-xl font-bold" style={{ color: primaryColor }}>{property.payback}</p>
-                                    </div>
-                                </div>
-
+                              
                                 <div className="space-y-2 mb-5">
                                     {property.highlights.map((point, index) => (
                                         <p key={index} className="flex items-start text-sm text-gray-700">

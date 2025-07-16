@@ -34,21 +34,14 @@ const RoiOverview = () => {
                             areas with appreciation potential, ensuring maximized returns over time.
                         </p>
 
-                        {/* STATS */}
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center pt-4">
-                            <div>
-                                <div className="text-2xl font-bold text-[#E62F35] mb-1">12–20%</div>
-                                <div className="text-gray-600 text-sm">Annual ROI</div>
-                            </div>
-                            <div>
-                                <div className="text-2xl font-bold text-[#E62F35] mb-1">5–8 Years</div>
-                                <div className="text-gray-600 text-sm">Payback Period</div>
-                            </div>
-                            <div>
-                                <div className="text-2xl font-bold text-[#E62F35] mb-1">100+</div>
-                                <div className="text-gray-600 text-sm">Successful Projects</div>
-                            </div>
-                        </div>
+                        <p>
+                            Government initiatives to boost tourism, infrastructure, and business growth add to the state’s
+                            favorable investment climate. We keep you informed about these opportunities for strategic decisions.
+                        </p>
+                        <p>
+                            With top-tier educational institutions nearby, rental potential increases around such zones.
+                            Properties near universities can attract both students and faculty, contributing to regular rental income.
+                        </p>
                     </div>
 
                     {/* RIGHT: Image */}
@@ -62,16 +55,10 @@ const RoiOverview = () => {
                 </div>
 
                 {/* BOTTOM ROW: Long Content (full width) */}
-                <div className="text-gray-700 space-y-3 container mx-auto leading-relaxed">
+                <div className="text-gray-700 space-y-2 -mt-10 container mx-auto leading-relaxed">
 
-                    <p>
-                        Government initiatives to boost tourism, infrastructure, and business growth add to the state’s
-                        favorable investment climate. We keep you informed about these opportunities for strategic decisions.
-                    </p>
-                    <p>
-                        With top-tier educational institutions nearby, rental potential increases around such zones.
-                        Properties near universities can attract both students and faculty, contributing to regular rental income.
-                    </p>
+
+
                     <p>
                         The Himalayan belt makes Uttarakhand a hotspot for adventure tourism.
                         Lodges, cottages, and resorts dedicated to adventure seekers perform well during seasonal peaks.

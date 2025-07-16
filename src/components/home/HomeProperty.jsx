@@ -22,13 +22,7 @@ const HomeProperty = () => {
             image: img2,
             stats: '8.5% Rental Yield'
         },
-        {
-            title: 'Villa & Farmhouses',
-            description: 'Experience luxury living amidst nature with our premium villas and farmhouses. These properties offer privacy, tranquility, and breathtaking views of Uttarakhand\'s landscapes.',
-            link: '/properties/villa',
-            image: img3,
-            stats: 'Luxury Living'
-        },
+       
         {
             title: 'ROI Properties',
             description: 'Our carefully selected high-ROI properties offer investors exceptional returns. With our market expertise, we identify properties with the highest appreciation potential.',
@@ -98,9 +92,7 @@ const HomeProperty = () => {
                                 <div className="relative h-80 overflow-hidden">
                                     <img src={item.image} alt={item.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
-                                    <div className="absolute top-4 right-4 bg-[#E62F35] text-white font-bold px-4 py-1 rounded-full text-sm shadow-md">
-                                        {item.stats}
-                                    </div>
+                                   
                                 </div>
 
                                 <div className="absolute bottom-0 left-0 right-0 p-8 text-white">

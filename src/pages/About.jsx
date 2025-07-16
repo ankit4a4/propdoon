@@ -4,7 +4,6 @@ import WoWeAewAbout from '../components/about/WoWeAewAbout';
 import WayChooseUs from '../components/home/WayChooseUs';
 import HomeCTA from '../components/home/HomeCTA';
 import Testimonials from '../components/home/Testimonials';
-import TeamSection from '../components/about/TeamSection';
 
 const About = () => {
   return (
@@ -14,7 +13,7 @@ const About = () => {
       <WoWeAewAbout />
       <Testimonials />
       <WayChooseUs />
-      <TeamSection />
+      {/* <TeamSection /> */}
       <HomeCTA />
     </>
   );

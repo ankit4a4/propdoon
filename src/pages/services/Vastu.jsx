@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import VastuHero from '../../components/services/Vastu/VastuHero';
 import VastServiceOverview from '../../components/services/Vastu/VastServiceOverview';
 import ArchitectureTypes from "../../components/services/architecture/ArchitectureTypes"
-import vastu1 from "../../assets/services/vastu/img1.webp"
-import vastu2 from "../../assets/services/vastu/img2.jpg"
+import vastu1 from "../../assets/services/vastu/1.jpeg"
+import vastu2 from "../../assets/services/vastu/2.jpeg"
 import vastu3 from "../../assets/services/vastu/img3.jpg"
 import vastu4 from "../../assets/services/vastu/img4.jpeg"
 import HomeCTA from '../../components/home/HomeCTA';

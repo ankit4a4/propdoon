@@ -46,7 +46,7 @@ const WoWeAreAbout = () => {
                                 Our Foundation
                             </h3>
                             <p>
-                                <strong className="text-[#E62F35]">PropDoon</strong> is a client-focused real estate consultancy based in the heart of Dehradun. Since our inception in 2012, we've been committed to simplifying property transactions with integrity, transparency, and local expertise.
+                                <strong className="text-[#E62F35]">PropDoon</strong> is a client-focused real estate consultancy based in the heart of Dehradun. Since our inception in 2015, we've been committed to simplifying property transactions with integrity, transparency, and local expertise.
                             </p>
                         </div>
 

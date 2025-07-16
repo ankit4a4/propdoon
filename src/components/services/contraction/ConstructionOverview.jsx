@@ -25,7 +25,7 @@ const ConstructionOverview = () => {
                         </h2>
 
                         <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                            For over <strong>15 years</strong>, we’ve been crafting durable, modern, and beautiful spaces. Whether it's a
+                            For over <strong>10 years</strong>, we’ve been crafting durable, modern, and beautiful spaces. Whether it's a
                             luxury home, multi-story apartment, commercial complex, or industrial facility — our construction
                             approach is rooted in <strong>engineering precision</strong>, safety-first execution, and timeless design.
                         </p>

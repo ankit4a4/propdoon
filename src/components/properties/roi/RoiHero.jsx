@@ -1,4 +1,4 @@
-import img from "../../../assets/home/image4.jpg"
+import img from "../../../assets/properties/roi/roi.jpeg"
 
 const RoiHero = () => {
     return (
@@ -20,7 +20,7 @@ const RoiHero = () => {
 
                 {/* Content */}
                 <div className="relative z-10 text-center text-white px-4">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4">ROI Properties</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold mb-4">R.O.I. Properties</h1>
                     <p className="text-xl max-w-2xl mx-auto">
                         High-return investment opportunities with guaranteed income potential
                     </p>

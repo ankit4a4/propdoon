@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import img1 from "../../assets/home/image1.jpg";
 import img2 from "../../assets/properties/Com/img3.jpeg";
-import img4 from "../../assets/home/image4.jpg";
+import img4 from "../../assets/properties/roi/roi.jpeg";
 
 const HomeProperty = () => {
     const categories = [
@@ -23,7 +23,7 @@ const HomeProperty = () => {
         },
 
         {
-            title: 'ROI Properties',
+            title: 'R.O.I. Properties',
             description: 'Our carefully selected high-ROI properties offer investors exceptional returns. With our market expertise, we identify properties with the highest appreciation potential.',
             link: '/properties/roi',
             image: img4,

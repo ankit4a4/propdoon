@@ -1,5 +1,5 @@
 import React from 'react';
-import bg from "../../../assets/home/image4.jpg";
+import bg from "../../../assets/properties/roi/roi.jpeg";
 
 const RoiOverview = () => {
     return (

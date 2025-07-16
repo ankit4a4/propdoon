@@ -67,7 +67,7 @@ const Header = () => {
       name: 'Buy/Sell Properties',
       href: '/properties',
       dropdown: [
-        { name: 'ROI Property', href: '/properties/roi' },
+        { name: 'R.O.I. Property', href: '/properties/roi' },
         { name: 'Residential Property', href: '/properties/residential' },
         { name: 'Commercial Property', href: '/properties/commercial' },
         // { name: 'Farmhouses/Villas', href: '/properties/villa' },

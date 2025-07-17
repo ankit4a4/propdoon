@@ -41,7 +41,7 @@ const ContactForm = () => {
     {
       title: 'Visit Our Office',
       details: [
-        ' 2nd Floor, Abhishek Tower,  Subhash Rd, opposite ST.JOSEPH SCHOOL, Irigation Colony, Karanpur, Dehradun, Uttarakhand 248001'
+        ' 2nd Floor, Abhishek Tower,  Subhash Rd, opposite ST.JOSEPH SCHOOL, Irrigation Colony, Karanpur, Dehradun, Uttarakhand 248001'
       ],
       icon: <FaMapMarkerAlt className="text-white text-lg" />,
       color: '#64C0ED',

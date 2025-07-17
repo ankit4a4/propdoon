@@ -71,14 +71,12 @@ const AboutSection = () => {
                             <div className="w-12 h-0.5 bg-[#64C0ED] mr-4"></div>
                             <span className="text-[#64C0ED] font-medium uppercase tracking-wider text-sm">About PropDoon</span>
                         </div>
-
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
                             Trusted Real Estate Partners in <span className="text-[#E62F35]">Dehradun</span>
                         </h2>
-
                         <div className="prose prose-lg text-gray-600 mb-8">
                             <p className="mb-4">
-                                Founded in 2012, PropDoon has established itself as Dehradun's premier real estate consultancy, helping clients navigate the property market with confidence and ease.
+                                Founded in 2015, PropDoon has established itself as Dehradun's premier real estate consultancy, helping clients navigate the property market with confidence and ease.
                             </p>
                             <p className="mb-6">
                                 Our team of seasoned professionals combines local market knowledge with national real estate trends to deliver exceptional results for buyers, sellers, and investors alike.

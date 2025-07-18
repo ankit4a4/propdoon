@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaHome, FaBuilding, FaMountain, FaChartLine } from 'react-icons/fa';
+import { FaHome, FaBuilding,  FaChartLine } from 'react-icons/fa';
 
 const PropertyCategories = () => {
     const properties = [
@@ -21,24 +21,14 @@ const PropertyCategories = () => {
             color: 'bg-[#64C0ED]', // blue
         },
         {
-            id: 'villas',
-            title: 'Villas & Farmhouses',
-            icon: <FaMountain className="w-8 h-8" />,
-            description:
-                'Scenic farmhouses and luxury villas offering serene Himalayan vistas and ample land.',
-            color: 'bg-[#E62F35]', // red
-        },
-        {
             id: 'roi',
-            title: 'ROI‑Focused Investments',
+            title: 'R.O.I. ‑ Focused Investments',
             icon: <FaChartLine className="w-8 h-8" />,
             description:
                 'Curated assets vetted by PropDoon for strong capital appreciation and rental returns.',
             color: 'bg-[#64C0ED]', // blue
         },
     ];
-
-    /* Framer‑motion variants (same as your services grid) */
     const container = {
         hidden: { opacity: 0 },
         visible: {
@@ -89,7 +79,7 @@ const PropertyCategories = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                 >
                     {properties.map((prop) => (
                         <motion.div

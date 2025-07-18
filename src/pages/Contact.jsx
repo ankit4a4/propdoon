@@ -10,8 +10,6 @@ const Contact = () => {
       <ContactHero />
       <ContactForm />
       <ContactMap />
-
-    
     </div>
   );
 };

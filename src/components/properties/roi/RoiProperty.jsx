@@ -11,8 +11,8 @@ import bg from "../../../assets/home/image4.jpg"
 const RoiProperty = () => {
     const [activeFilter, setActiveFilter] = useState('all');
 
-    const primaryColor = '#64C0ED';   // Sky‑blue
-    const accentColor = '#E62F35';   // Red
+    const primaryColor = '#64C0ED';
+    const accentColor = '#E62F35';
 
     const roiProperties = [
         {
@@ -211,7 +211,7 @@ const RoiProperty = () => {
 
                                 <p className="text-sm text-gray-600 mb-4 line-clamp-2">{property.description}</p>
 
-                              
+
                                 <div className="space-y-2 mb-5">
                                     {property.highlights.map((point, index) => (
                                         <p key={index} className="flex items-start text-sm text-gray-700">

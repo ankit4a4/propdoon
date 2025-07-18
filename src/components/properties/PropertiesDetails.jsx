@@ -1,9 +1,8 @@
 import React from 'react';
-import { FaHome, FaBuilding, FaMountain, FaChartLine } from 'react-icons/fa';
+import { FaHome, FaBuilding, FaChartLine } from 'react-icons/fa';
 import img1 from "../../assets/home/image1.jpg";
-import img2 from "../../assets/home/image2.jpeg";
-import img3 from "../../assets/home/image3.webp";
-import img4 from "../../assets/home/image4.jpg";
+import img2 from "../../assets/properties/Com/img3.jpeg";
+import img4 from "../../assets/properties/roi/roi.jpeg";
 
 const PropertiesDetails = () => {
     const properties = [
@@ -36,22 +35,8 @@ const PropertiesDetails = () => {
             ],
         },
         {
-            id: 'villas',
-            title: 'Villas & Farmhouses',
-            icon: <FaMountain className="text-4xl text-[#64C0ED] mr-4" />,
-            description:
-                'Uttarakhand’s lush valleys offer the perfect backdrop for luxurious villas and peaceful farmhouses. These are ideal for second homes or vacation rentals with direct access to nature and tranquility.',
-            image: img3,
-            highlights: [
-                'Extensive land with greenery & mountain views',
-                'Peaceful escape from city life',
-                'High demand for short-term rentals (Airbnb, etc.)',
-                'Custom-built or pre-developed options',
-            ],
-        },
-        {
             id: 'roi',
-            title: 'ROI Focused Investments',
+            title: 'R.O.I. Focused Investments',
             icon: <FaChartLine className="text-4xl text-[#64C0ED] mr-4" />,
             description:
                 'Propdoon helps you discover investment-worthy properties with high ROI potential. Our curated portfolio includes assets with strong capital growth, rental yields, and future marketability.',

@@ -77,7 +77,7 @@ const PropertiesDetails = () => {
                                     <img
                                         src={property.image}
                                         alt={property.title}
-                                        className={`rounded-lg shadow-xl ${isImageBackground ? 'hidden lg:block' : ''}`}
+                                        className={`rounded-lg h-[330px] object-cover w-full shadow-xl ${isImageBackground ? 'hidden lg:block' : ''}`}
                                     />
                                 </div>
 

@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 
 const HeroHome = () => {
     const form = useRef();
+    const [loading, setLoading] = useState(false);
 
     const SERVICE_ID = 'service_v648drt';
     const TEMPLATE_ID = 'template_1o4j9m7';
@@ -35,6 +36,7 @@ const HeroHome = () => {
 
     const sendEmail = (e) => {
         e.preventDefault();
+        setLoading(true);
         emailjs
             .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
             .then(
@@ -42,10 +44,12 @@ const HeroHome = () => {
                     console.log(result.text);
                     toast.success('Message sent successfully!');
                     form.current.reset();
+                    setLoading(false);
                 },
                 (error) => {
                     console.error(error.text);
                     toast.error('Something went wrong!');
+                    setLoading(false);
                 }
             );
     };
@@ -137,8 +141,20 @@ const HeroHome = () => {
                                 type="submit"
                                 className="w-full cursor-pointer py-3.5 bg-[#64C0ED] hover:bg-[#50a8d3] text-black text-base font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2"
                             >
-                                <HiPaperAirplane className="h-5 w-5" />
-                                <span>Submit</span>
+                                {
+                                    loading ? (
+                                        <>
+
+                                            <span className="animate-spin h-5 w-5 border-2 border-t-transparent border-white rounded-full"></span>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <HiPaperAirplane className="h-5 w-5" />
+                                            <span>Submit</span>
+                                        </>
+                                    )
+                                }
+
                             </button>
                         </form>
                     </div>

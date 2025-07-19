@@ -19,11 +19,14 @@ const ContactForm = () => {
     message: '',
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
 
     const templateParams = {
       from_name: formData.name,
@@ -36,10 +39,11 @@ const ContactForm = () => {
     emailjs
       .send(
         'service_v648drt',
-        'template_d0o5gag',
+        'template_y87auqs',
         templateParams,
         'FQnhbjYSFhRv3KmBN'
       )
+
       .then(
         (response) => {
           console.log('SUCCESS!', response.status, response.text);
@@ -51,10 +55,12 @@ const ContactForm = () => {
             service: '',
             message: '',
           });
+          setLoading(false);
         },
         (err) => {
           console.error('FAILED...', err);
           toast.error(err.text);
+          setLoading(false);
         }
       );
   };
@@ -159,7 +165,11 @@ const ContactForm = () => {
                 type="submit"
                 className="w-full bg-[#E62F35] hover:bg-[#c92b2f] text-white rounded-lg py-4 text-lg transition"
               >
-                Send Message
+                {loading ? (
+                  <span className="animate-spin h-5 w-5 border-2 border-t-transparent border-white rounded-full"></span>
+                ) : (
+                  ' Send Message'
+                )}
               </button>
             </form>
           </div>

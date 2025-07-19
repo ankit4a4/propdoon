@@ -10,9 +10,9 @@ import { toast } from 'react-toastify';
 const HeroHome = () => {
     const form = useRef();
 
-    const SERVICE_ID = 'your_service_id';
-    const TEMPLATE_ID = 'your_template_id';
-    const PUBLIC_KEY = 'your_public_key';
+    const SERVICE_ID = 'service_dtd2yh6';
+    const TEMPLATE_ID = 'template_wersf5m';
+    const PUBLIC_KEY = '2De-wZn3eehOdxnb2';
 
     const images = [
         'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
@@ -35,7 +35,6 @@ const HeroHome = () => {
 
     const sendEmail = (e) => {
         e.preventDefault();
-
         emailjs
             .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
             .then(

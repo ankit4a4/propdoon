@@ -33,30 +33,30 @@ const ContactForm = () => {
       message: formData.message,
     };
 
-    // emailjs
-    //   .send(
-    //     'service_dtd2yh6',
-    //     'template_3fczwrj',
-    //     templateParams,
-    //     '2De-wZn3eehOdxnb2'
-    //   )
-    //   .then(
-    //     (response) => {
-    //       console.log('SUCCESS!', response.status, response.text);
-    //       toast.success('form submitted successfully!');
-    //       setFormData({
-    //         name: '',
-    //         email: '',
-    //         phone: '',
-    //         service: '',
-    //         message: '',
-    //       });
-    //     },
-    //     (err) => {
-    //       console.error('FAILED...', err);
-    //       toast.error(err.text);
-    //     }
-    //   );
+    emailjs
+      .send(
+        'service_v648drt',
+        'template_d0o5gag',
+        templateParams,
+        'FQnhbjYSFhRv3KmBN'
+      )
+      .then(
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text);
+          toast.success('form submitted successfully!');
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            service: '',
+            message: '',
+          });
+        },
+        (err) => {
+          console.error('FAILED...', err);
+          toast.error(err.text);
+        }
+      );
   };
 
   const services = [

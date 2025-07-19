@@ -10,9 +10,9 @@ import { toast } from 'react-toastify';
 const HeroHome = () => {
     const form = useRef();
 
-    const SERVICE_ID = 'service_dtd2yh6';
-    const TEMPLATE_ID = 'template_wersf5m';
-    const PUBLIC_KEY = '2De-wZn3eehOdxnb2';
+    const SERVICE_ID = 'service_v648drt';
+    const TEMPLATE_ID = 'template_1o4j9m7';
+    const PUBLIC_KEY = 'FQnhbjYSFhRv3KmBN';
 
     const images = [
         'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
@@ -35,19 +35,19 @@ const HeroHome = () => {
 
     const sendEmail = (e) => {
         e.preventDefault();
-        // emailjs
-        //     .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
-        //     .then(
-        //         (result) => {
-        //             console.log(result.text);
-        //             toast.success('Message sent successfully!');
-        //             form.current.reset();
-        //         },
-        //         (error) => {
-        //             console.error(error.text);
-        //             toast.error('Something went wrong!');
-        //         }
-        //     );
+        emailjs
+            .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+            .then(
+                (result) => {
+                    console.log(result.text);
+                    toast.success('Message sent successfully!');
+                    form.current.reset();
+                },
+                (error) => {
+                    console.error(error.text);
+                    toast.error('Something went wrong!');
+                }
+            );
     };
 
     return (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { HiArrowRight } from 'react-icons/hi';
-import { FiPhoneCall } from 'react-icons/fi';
+import { FiLoader, FiPhoneCall } from 'react-icons/fi';
 import { HiPaperAirplane } from 'react-icons/hi2';
 import { BsChevronDoubleDown } from 'react-icons/bs';
 import emailjs from '@emailjs/browser';
@@ -145,7 +145,7 @@ const HeroHome = () => {
                                     loading ? (
                                         <>
 
-                                            <span className="animate-spin h-5 w-5 border-2 border-t-transparent border-white rounded-full"></span>
+                                            <span className=""><FiLoader className='animate-spin' /></span>
                                         </>
                                     ) : (
                                         <>

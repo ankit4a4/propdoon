@@ -9,6 +9,7 @@ import {
   FaLinkedinIn,
 } from 'react-icons/fa';
 import { toast } from 'react-toastify';
+import { FiLoader } from 'react-icons/fi';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -163,14 +164,17 @@ const ContactForm = () => {
 
               <button
                 type="submit"
-                className="w-full bg-[#E62F35] hover:bg-[#c92b2f] text-white rounded-lg py-4 text-lg transition"
+                className="w-full flex items-center justify-center gap-3 bg-[#E62F35] hover:bg-[#c92b2f] text-white rounded-lg py-4 text-lg transition"
               >
                 {loading ? (
-                  <span className="animate-spin h-5 w-5 border-2 border-t-transparent border-white rounded-full"></span>
+                  <span className=""><FiLoader className='animate-spin' /></span>
                 ) : (
                   ' Send Message'
                 )}
+               
+
               </button>
+
             </form>
           </div>
 

@@ -35,19 +35,19 @@ const HeroHome = () => {
 
     const sendEmail = (e) => {
         e.preventDefault();
-        emailjs
-            .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
-            .then(
-                (result) => {
-                    console.log(result.text);
-                    toast.success('Message sent successfully!');
-                    form.current.reset();
-                },
-                (error) => {
-                    console.error(error.text);
-                    toast.error('Something went wrong!');
-                }
-            );
+        // emailjs
+        //     .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+        //     .then(
+        //         (result) => {
+        //             console.log(result.text);
+        //             toast.success('Message sent successfully!');
+        //             form.current.reset();
+        //         },
+        //         (error) => {
+        //             console.error(error.text);
+        //             toast.error('Something went wrong!');
+        //         }
+        //     );
     };
 
     return (

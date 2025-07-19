@@ -30,12 +30,13 @@ import Updates from './pages/properties/Updates';
 
 import './App.css';
 import SingleBlog from './pages/SingleBlog';
-
+ import { ToastContainer } from 'react-toastify';
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-background">
         <Header />
+        <ToastContainer />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />

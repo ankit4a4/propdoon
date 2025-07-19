@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser'; // ✅ latest package
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -7,9 +8,9 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const ContactForm = () => {
-  /* ---------------- state ---------------- */
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,25 +24,53 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+
+    const templateParams = {
+      from_name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      service: formData.service,
+      message: formData.message,
+    };
+
+    emailjs
+      .send(
+        'YOUR_SERVICE_ID',
+        'YOUR_TEMPLATE_ID',
+        templateParams,
+        'YOUR_PUBLIC_KEY'
+      )
+      .then(
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text);
+          toast.success('form submitted successfully!');
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            service: '',
+            message: '',
+          });
+        },
+        (err) => {
+          console.error('FAILED...', err);
+          toast.error(err.text);
+        }
+      );
   };
 
-  /* ---------------- static data ---------------- */
   const services = [
     'Construction',
     'Architecture',
     'Interior Design',
     'Vastu Consultation',
-
   ];
 
   const contactInfo = [
     {
       title: 'Visit Our Office',
       details: [
-        ' 2nd Floor, Abhishek Tower,  Subhash Road, opposite ST.JOSEPH SCHOOL, Irrigation Colony, Karanpur, Dehradun, Uttarakhand 248001'
+        '2nd Floor, Abhishek Tower,  Subhash Road, opposite ST.JOSEPH SCHOOL, Irrigation Colony, Karanpur, Dehradun, Uttarakhand 248001'
       ],
       icon: <FaMapMarkerAlt className="text-white text-lg" />,
       color: '#64C0ED',
@@ -53,33 +82,31 @@ const ContactForm = () => {
       color: '#E62F35',
     },
     {
-      title: 'Email Us',
+      title: 'Email Us',
       details: ['info@propdoon.com'],
       icon: <FaEnvelope className="text-white text-lg" />,
       color: '#64C0ED',
     },
   ];
 
-  /* ---------------- jsx ---------------- */
   return (
     <section className="section-padding bg-white">
       <div className="container-max">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* ============ FORM ============ */}
           <div>
-            <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
+            <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
             <p className="text-gray-600 mb-8">
-              Fill out the form below and we&rsquo;ll get back to you within 24 hours.
+              Fill out the form below and we’ll get back to you within 24 hours.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* name + email */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <input
                   type="text"
                   name="name"
                   required
-                  placeholder="Full Name"
+                  placeholder="Full Name"
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#64C0ED] outline-none"
@@ -88,20 +115,19 @@ const ContactForm = () => {
                   type="email"
                   name="email"
                   required
-                  placeholder="Email Address"
+                  placeholder="Email Address"
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#64C0ED] outline-none"
                 />
               </div>
 
-              {/* phone + service */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <input
                   type="tel"
                   name="phone"
                   required
-                  placeholder="Phone Number"
+                  placeholder="Phone Number"
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#64C0ED] outline-none"
@@ -112,14 +138,13 @@ const ContactForm = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#64C0ED] outline-none"
                 >
-                  <option value="">Looking for Properties</option>
+                  <option value="" disabled >Looking for Properties</option>
                   {services.map((s) => (
                     <option key={s}>{s}</option>
                   ))}
                 </select>
               </div>
 
-              {/* message */}
               <textarea
                 name="message"
                 rows="6"
@@ -134,16 +159,16 @@ const ContactForm = () => {
                 type="submit"
                 className="w-full bg-[#E62F35] hover:bg-[#c92b2f] text-white rounded-lg py-4 text-lg transition"
               >
-                Send Message
+                Send Message
               </button>
             </form>
           </div>
 
           {/* ============ INFO ============ */}
           <div>
-            <h2 className="text-3xl font-bold mb-6">Contact Information</h2>
+            <h2 className="text-3xl font-bold mb-6">Contact Information</h2>
             <p className="text-gray-600 mb-8">
-              Reach out through any channel below — we&rsquo;re happy to help.
+              Reach out through any channel below — we’re happy to help.
             </p>
 
             <div className="space-y-8">
@@ -168,7 +193,7 @@ const ContactForm = () => {
             </div>
 
             {/* socials */}
-            <h3 className="text-lg font-semibold mt-12 mb-4">Follow Us</h3>
+            <h3 className="text-lg font-semibold mt-12 mb-4">Follow Us</h3>
             <div className="flex space-x-4">
               {[FaFacebookF, FaInstagram, FaLinkedinIn].map((Icon, i) => (
                 <a

@@ -1,11 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { HiArrowRight } from 'react-icons/hi';
 import { FiPhoneCall } from 'react-icons/fi';
 import { HiPaperAirplane } from 'react-icons/hi2';
 import { BsChevronDoubleDown } from 'react-icons/bs';
+import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
 
 const HeroHome = () => {
+    const form = useRef();
+
+    const SERVICE_ID = 'your_service_id';
+    const TEMPLATE_ID = 'your_template_id';
+    const PUBLIC_KEY = 'your_public_key';
+
     const images = [
         'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
         'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
@@ -22,13 +30,30 @@ const HeroHome = () => {
                 setFade(true);
             }, 500);
         }, 7000);
-
         return () => clearInterval(interval);
     }, []);
 
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs
+            .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+            .then(
+                (result) => {
+                    console.log(result.text);
+                    toast.success('Message sent successfully!');
+                    form.current.reset();
+                },
+                (error) => {
+                    console.error(error.text);
+                    toast.error('Something went wrong!');
+                }
+            );
+    };
+
     return (
-        <section className="relative md:h-screen pb-8 md:pb-0   pt-8 md:pt-0 flex items-center justify-center overflow-hidden">
-            {/* Background Image */}
+        <section className="relative md:h-screen pb-8 md:pb-0 pt-8 md:pt-0 flex items-center justify-center overflow-hidden">
+            {/* Background */}
             <div
                 className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ${fade ? 'opacity-100' : 'opacity-0'}`}
                 style={{
@@ -41,17 +66,14 @@ const HeroHome = () => {
                 }}
             ></div>
 
-            {/* Overlays */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80 z-10"></div>
             <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/diagonal-striped-brick.png')] z-10"></div>
 
             {/* Content */}
             <div className="relative z-20 w-full max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    {/* Left Side */}
+                    {/* Left Content */}
                     <div className="text-white">
-                        <div className="flex items-center gap-3 mb-6">
-                        </div>
                         <h1 className="text-4xl sm:text-3xl md:text-5xl font-bold leading-tight mb-6">
                             Crafting <span className="text-[#64C0ED]">Modern</span> Living
                             <span className="block mt-3">Spaces in Dehradun</span>
@@ -59,6 +81,7 @@ const HeroHome = () => {
                         <p className="text-lg text-gray-300 mb-8 max-w-lg leading-relaxed">
                             We transform visions into reality with innovative architecture, sustainable design, and unparalleled craftsmanship.
                         </p>
+
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Link
                                 to="/properties"
@@ -77,30 +100,38 @@ const HeroHome = () => {
                         </div>
                     </div>
 
-                    {/* Right Side Form */}
+                    {/* Contact Form */}
                     <div className="bg-gradient-to-br from-[#64C0ED]/10 via-[#64C0ED]/5 to-white/5 backdrop-blur-lg rounded-xl p-6 md:p-8 border border-white/20 max-w-md w-full mx-auto shadow-xl">
                         <div className="mb-6">
                             <h2 className="text-white text-2xl font-bold mb-2">Contact Us</h2>
                         </div>
-                        <form className="space-y-5">
+                        <form ref={form} onSubmit={sendEmail} className="space-y-5">
                             <input
                                 type="text"
+                                name="user_name"
                                 placeholder="Your Name"
+                                required
                                 className="w-full px-4 py-3 rounded-lg bg-white/10 text-white border border-white/20 placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#64C0ED]/50 transition-all"
                             />
                             <input
                                 type="email"
+                                name="user_email"
                                 placeholder="Email Address"
+                                required
                                 className="w-full px-4 py-3 rounded-lg bg-white/10 text-white border border-white/20 placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#64C0ED]/50 transition-all"
                             />
                             <input
                                 type="tel"
+                                name="user_phone"
                                 placeholder="Phone Number"
+                                required
                                 className="w-full px-4 py-3 rounded-lg bg-white/10 text-white border border-white/20 placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#64C0ED]/50 transition-all"
                             />
                             <textarea
+                                name="message"
                                 rows={3}
                                 placeholder="Your Requirements"
+                                required
                                 className="w-full px-4 py-3 rounded-lg bg-white/10 text-white border border-white/20 placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#64C0ED]/50 transition-all resize-none"
                             ></textarea>
                             <button
